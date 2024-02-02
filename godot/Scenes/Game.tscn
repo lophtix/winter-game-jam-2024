@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://gjlppxpv6bxt"]
+[gd_scene load_steps=3 format=3 uid="uid://gjlppxpv6bxt"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_jw4l1"]
+[ext_resource type="PackedScene" uid="uid://diox8phfgjeou" path="res://Scenes/Bat.tscn" id="2_iuflg"]
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("container")]
 script = ExtResource("1_jw4l1")
@@ -9,3 +10,5 @@ spawnTimeLow = 0.3
 spawnTimeHigh = 1.2
 
 [node name="ShoeContainer" type="Node2D" parent="."]
+
+[node name="Bat" parent="." instance=ExtResource("2_iuflg")]

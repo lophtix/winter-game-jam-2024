@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://diox8phfgjeou"]
+
+[ext_resource type="Texture2D" uid="uid://fk37fdexlk1k" path="res://assets/bat.png" id="1_4eyhf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yi10k"]
+size = Vector2(172, 588)
+
+[node name="Bat" type="StaticBody2D"]
+scale = Vector2(0.4, 0.4)
+
+[node name="Bat" type="Sprite2D" parent="."]
+texture = ExtResource("1_4eyhf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -3)
+shape = SubResource("RectangleShape2D_yi10k")
