@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dski00ajvpwpw"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 363.0
+offset_top = 366.0
+offset_right = 403.0
+offset_bottom = 406.0
+
+[node name="Titel Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -9.05
+anchor_top = -9.125
+anchor_right = 19.7
+anchor_bottom = 6.925
+offset_left = 506.0
+offset_top = 292.0
+offset_right = -526.0
+offset_bottom = -324.0
+text = "Shoe packeting"
+
+[node name="Start Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 9.9
+anchor_bottom = 1.7
+offset_left = 70.0
+offset_top = 18.0
+offset_right = -220.0
+offset_bottom = -19.0
+text = "Start"
+
+[node name="Credit Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 9.9
+anchor_bottom = 1.7
+offset_left = 212.0
+offset_top = 18.0
+offset_right = -78.0
+offset_bottom = -19.0
+text = "Credit"
