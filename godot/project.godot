@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="wgj2024"
+run/main_scene="res://Scenes/Game.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="wgj2024"
 
 [rendering]
 

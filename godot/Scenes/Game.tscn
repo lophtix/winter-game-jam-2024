@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://gjlppxpv6bxt"]
+
+[ext_resource type="Script" path="res://Scripts/Game.gd" id="1_jw4l1"]
+
+[node name="Game" type="Node2D" node_paths=PackedStringArray("container")]
+script = ExtResource("1_jw4l1")
+container = NodePath("ShoeContainer")
+spawnTimeLow = 0.3
+spawnTimeHigh = 1.2
+
+[node name="ShoeContainer" type="Node2D" parent="."]
