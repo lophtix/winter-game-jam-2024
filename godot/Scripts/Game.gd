@@ -17,6 +17,9 @@ func _process(delta):
 	if spawnTimer <= 0:
 		spawnTimer = randf() * (spawnTimeHigh - spawnTimeLow) + spawnTimeLow
 		var shoeInstance = shoeNode.instantiate()
+		var screenWidth = get_viewport_rect().size.x
+		var xPosition = randf() * screenWidth
+		shoeInstance.position.x = xPosition
 		container.add_child(shoeInstance)
 		pass
 	pass

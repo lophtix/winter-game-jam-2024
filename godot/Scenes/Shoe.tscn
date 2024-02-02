@@ -1,15 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://bf4yx3hmmv5u0"]
 
-[ext_resource type="Texture2D" uid="uid://df2ipqri4u0nw" path="res://icon.svg" id="1_gu7bo"]
+[ext_resource type="Texture2D" uid="uid://vc6xg45vemi3" path="res://assets/shoe.png" id="1_gkaiu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8y0sx"]
-size = Vector2(125, 124)
+size = Vector2(214, 173)
 
 [node name="Shoe" type="RigidBody2D"]
 
 [node name="Icon" type="Sprite2D" parent="."]
-texture = ExtResource("1_gu7bo")
+texture = ExtResource("1_gkaiu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 1)
+position = Vector2(2, -0.5)
 shape = SubResource("RectangleShape2D_8y0sx")
