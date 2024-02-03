@@ -3,12 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://vc6xg45vemi3" path="res://assets/shoe.png" id="1_gkaiu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bips4"]
-radius = 104.16
+radius = 40.3764
 
 [node name="Shoe" type="RigidBody2D"]
-scale = Vector2(0.4, 0.4)
 
 [node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_gkaiu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

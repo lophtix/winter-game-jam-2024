@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name Game
+
 var shoeNode = preload("res://Scenes/Shoe.tscn")
 @export var container: Node2D
 @export var spawnTimeLow = 3.0
