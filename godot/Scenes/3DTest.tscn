@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dm5rrd7eoir4t"]
+[gd_scene load_steps=5 format=3 uid="uid://dm5rrd7eoir4t"]
 
-[ext_resource type="PackedScene" uid="uid://cg75ghx351xjb" path="res://Scenes/Box.tscn" id="1_v4omr"]
+[ext_resource type="PackedScene" uid="uid://cg75ghx351xjb" path="res://Scenes/GameBox.tscn" id="1_v4omr"]
+[ext_resource type="Texture2D" uid="uid://dg44k1ajjw6i4" path="res://assets/background.png" id="2_ju3lm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rjsq6"]
 size = Vector3(10, 0.2, 10)
@@ -16,13 +17,20 @@ transform = Transform3D(0.99998, 0.00553539, -0.00319583, -1.49013e-08, 0.499998
 shadow_enabled = true
 
 [node name="Box" parent="." instance=ExtResource("1_v4omr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1537, -1.33138)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73488, 1.02005, -1.33138)
 
 [node name="Box2" parent="." instance=ExtResource("1_v4omr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78672, 3.7954, -1.33138)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52058, 1.06666, -1.33138)
+
+[node name="Box3" parent="." instance=ExtResource("1_v4omr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73045, 4.94108, -1.33138)
+
+[node name="Box4" parent="." instance=ExtResource("1_v4omr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.59158, 4.89355, -1.33138)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 10)
+fov = 45.0
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 axis_lock_linear_x = true
@@ -38,3 +46,7 @@ shape = SubResource("BoxShape3D_rjsq6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
 mesh = SubResource("PlaneMesh_lucwn")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 0, 2.5, -5)
+texture = ExtResource("2_ju3lm")
