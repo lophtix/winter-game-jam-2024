@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc1483mrm6tqu"
-path="res://.godot/imported/OrangeShoe1.png-a5df745e1de228968e7be3c544a7b556.ctex"
+uid="uid://bw7s3yrmivqx"
+path="res://.godot/imported/YellowBox1.png-8eaafdd63f70ca1130fd798ec28457bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/OrangeShoe1.png"
-dest_files=["res://.godot/imported/OrangeShoe1.png-a5df745e1de228968e7be3c544a7b556.ctex"]
+source_file="res://assets/yellow/YellowBox1.png"
+dest_files=["res://.godot/imported/YellowBox1.png-8eaafdd63f70ca1130fd798ec28457bf.ctex"]
 
 [params]
 

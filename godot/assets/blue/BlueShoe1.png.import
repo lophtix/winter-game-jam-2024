@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjlilk4gwi238"
-path="res://.godot/imported/GreenTop1.png-98a73d9153335f0b0d84c2677fcaf160.ctex"
+uid="uid://biseiyeu5lepq"
+path="res://.godot/imported/BlueShoe1.png-a6308f283eab2d675f4cb7605eb9b836.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/GreenTop1.png"
-dest_files=["res://.godot/imported/GreenTop1.png-98a73d9153335f0b0d84c2677fcaf160.ctex"]
+source_file="res://assets/blue/BlueShoe1.png"
+dest_files=["res://.godot/imported/BlueShoe1.png-a6308f283eab2d675f4cb7605eb9b836.ctex"]
 
 [params]
 

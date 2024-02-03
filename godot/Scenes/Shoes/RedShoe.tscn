@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmjxj20vlcdu8"]
+
+[ext_resource type="Script" path="res://Scripts/Shoe.gd" id="1_smiis"]
+[ext_resource type="Texture2D" uid="uid://ogkiijopiuva" path="res://assets/red/RedShoe1.png" id="2_54cie"]
+
+[node name="Shoe" type="RigidBody2D"]
+script = ExtResource("1_smiis")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_54cie")
+
+[node name="Collider" type="CollisionPolygon2D" parent="."]
+position = Vector2(2, -0.5)
+polygon = PackedVector2Array(-19, -23.5, 32, 12.5, 32, 23.5, -35, 22.5, -35, -15.5)

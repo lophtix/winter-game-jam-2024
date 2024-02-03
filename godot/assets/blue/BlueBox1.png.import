@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca5vt6xe5ek2s"
-path="res://.godot/imported/YellowTop1.png-dc32afe3cea0b06c15110e3efdd79557.ctex"
+uid="uid://iyba64vbpksl"
+path="res://.godot/imported/BlueBox1.png-f1641cb8ee44af1bc9399270a9151a71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/YellowTop1.png"
-dest_files=["res://.godot/imported/YellowTop1.png-dc32afe3cea0b06c15110e3efdd79557.ctex"]
+source_file="res://assets/blue/BlueBox1.png"
+dest_files=["res://.godot/imported/BlueBox1.png-f1641cb8ee44af1bc9399270a9151a71.ctex"]
 
 [params]
 
