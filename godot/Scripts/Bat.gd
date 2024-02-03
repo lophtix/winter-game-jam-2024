@@ -4,6 +4,11 @@ class_name Bat
 
 var currentShoe: Shoe = null
 var chargeMode = false
+@onready var prevXPosition = global_position.x
+@onready var initialRotation = rotation
+
+@export var rotationScale: float
+@export var maxVelocity: float
 
 func _ready():
 	$Area2D.connect("body_entered", on_body_entered)
@@ -30,6 +35,11 @@ func _input(event):
 				body.whack()
 
 func _process(_delta):
+	var xVelocity = global_position.x - prevXPosition
+	var ratio = clamp(xVelocity / maxVelocity, -1, 1)
+	var angle = asin(ratio) * rotationScale
+	rotation = initialRotation + lerp(rotation - initialRotation, angle, 0.1)
+	prevXPosition = global_position.x
 	pass
 
 func on_body_entered(body):
