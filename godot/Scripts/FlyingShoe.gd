@@ -22,8 +22,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(angular_velocity)
-	print(rotation)
 	if flying:
 		time_flying_current += delta
 		
