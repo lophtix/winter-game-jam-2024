@@ -7,8 +7,10 @@
 [node name="Game" type="Node2D" node_paths=PackedStringArray("container")]
 script = ExtResource("1_jw4l1")
 container = NodePath("ShoeContainer")
-spawnTimeLow = 0.3
-spawnTimeHigh = 1.2
+spawnTimeLow = 0.1
+spawnTimeHigh = 0.2
+gameTime = 5.0
+gameEndTime = 5.0
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(576, 328)

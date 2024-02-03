@@ -6,12 +6,28 @@ var engine : GameEngine
 
 var shoeNode = preload("res://Scenes/Shoe.tscn")
 @export var container : Node2D
+
+var spawn
 @export var spawnTimeLow = 3.0
 @export var spawnTimeHigh = 6.0
 var spawnTimer = 0
 
+@export var gameTime = 30.0
+@export var gameEndTime = 4.0
+
+var timer : Timer
+
 func _ready():
 	engine = get_node_or_null("..")
+
+	spawn = true
+
+	timer = Timer.new()
+	add_child(timer)
+	timer.one_shot = true
+	timer.wait_time = gameTime
+	timer.timeout.connect(_on_time_up)
+	timer.start()
 
 func handle_timeout():
 	var shoeInstance = shoeNode.instantiate()
@@ -21,10 +37,21 @@ func handle_timeout():
 	container.add_child(shoeInstance)
 
 func _process(delta):
-	spawnTimer -= delta
-	if spawnTimer <= 0:
-		spawnTimer = randf() * (spawnTimeHigh - spawnTimeLow) + spawnTimeLow
-		handle_timeout()
+	if spawn:
+		spawnTimer -= delta
+		if spawnTimer <= 0:
+			spawnTimer = randf() * (spawnTimeHigh - spawnTimeLow) + spawnTimeLow
+			handle_timeout()
+	else:
+		if not container.get_children() and timer.is_stopped():
+			timer.start()
 
 func end_game():
 	engine.end_game()
+
+func _on_time_up():
+	if spawn:
+		spawn = false
+		timer.wait_time = gameEndTime
+	else:
+		end_game()
