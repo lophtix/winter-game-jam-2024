@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6bip3qc2nrmn"]
+
+[ext_resource type="Script" path="res://Scenes/FlyingShoe.gd" id="1_by2r6"]
+[ext_resource type="Texture2D" uid="uid://vc6xg45vemi3" path="res://assets/shoe.png" id="1_g2465"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2mj7m"]
+radius = 0.866379
+
+[node name="FlyingShoe" type="RigidBody3D"]
+script = ExtResource("1_by2r6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.795696, -0.605697, 0, 0.605697, 0.795696, 0, 0, 0, 1, -0.03125, -0.024292, 0)
+shape = SubResource("SphereShape3D_2mj7m")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_g2465")

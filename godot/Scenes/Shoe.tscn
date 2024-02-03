@@ -1,18 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bf4yx3hmmv5u0"]
+[gd_scene load_steps=3 format=3 uid="uid://bf4yx3hmmv5u0"]
 
 [ext_resource type="Texture2D" uid="uid://vc6xg45vemi3" path="res://assets/shoe.png" id="1_gkaiu"]
-[ext_resource type="Script" path="res://Scripts/Shoe.gd" id="1_wgtyl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bips4"]
 radius = 40.3764
 
 [node name="Shoe" type="RigidBody2D"]
-script = ExtResource("1_wgtyl")
 
-[node name="Icon" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_gkaiu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2(2, -0.5)
 shape = SubResource("CircleShape2D_bips4")

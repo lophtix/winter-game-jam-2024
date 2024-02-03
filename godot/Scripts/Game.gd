@@ -25,7 +25,7 @@ func _process(delta):
 	if spawnTimer <= 0:
 		spawnTimer = randf() * (spawnTimeHigh - spawnTimeLow) + spawnTimeLow
 		handle_timeout()
-		
+	
 	$Bat.global_position = get_global_mouse_position()
 
 func end_game():
