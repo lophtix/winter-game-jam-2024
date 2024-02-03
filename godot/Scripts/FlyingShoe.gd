@@ -12,8 +12,6 @@ var time_flying_max : float
 var start_position : Vector3
 var end_position : Vector3
 
-const z_offset : float = 5
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

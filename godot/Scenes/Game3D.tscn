@@ -31,8 +31,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73045, 4.94108, -1.33138)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.59158, 4.89355, -1.33138)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 10)
-fov = 45.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 70)
+fov = 10.0
+near = 50.0
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 axis_lock_linear_x = true
