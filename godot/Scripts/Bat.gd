@@ -2,7 +2,6 @@ extends StaticBody2D
 
 class_name Bat
 
-var currentShoe: Shoe = null
 var chargeMode = false
 @onready var prevXPosition = global_position.x
 @onready var initialRotation = rotation
@@ -11,8 +10,6 @@ var chargeMode = false
 @export var maxVelocity: float
 
 func _ready():
-	$Area2D.connect("body_entered", on_body_entered)
-	$Area2D.connect("body_exited", on_body_exited)
 	pass
 	
 func _input(event):
@@ -40,12 +37,6 @@ func _process(_delta):
 	var angle = asin(ratio) * rotationScale
 	rotation = initialRotation + lerp(rotation - initialRotation, angle, 0.1)
 	prevXPosition = global_position.x
-	pass
-
-func on_body_entered(body):
-	if body is Shoe:
-		currentShoe = body
-
-func on_body_exited(body):
-	if body == currentShoe:
-		currentShoe = null
+	
+	global_position = get_global_mouse_position()
+	
