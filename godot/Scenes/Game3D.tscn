@@ -23,12 +23,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73488, 1.02005, -1.33138)
 
 [node name="Box2" parent="." instance=ExtResource("1_v4omr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52058, 1.06666, -1.33138)
+box_color = 3
 
 [node name="Box3" parent="." instance=ExtResource("1_v4omr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73045, 4.94108, -1.33138)
+box_color = 0
 
 [node name="Box4" parent="." instance=ExtResource("1_v4omr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.59158, 4.89355, -1.33138)
+box_color = 1
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 70)

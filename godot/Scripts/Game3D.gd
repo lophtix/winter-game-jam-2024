@@ -2,6 +2,7 @@ extends Node3D
 
 class_name Game3D
 
+@onready var engine : GameEngine = get_node_or_null("../../../../")
 @onready var shoe_container : Node3D = $"Shoe Container"
 @onready var camera : Camera3D = $Camera3D
 
