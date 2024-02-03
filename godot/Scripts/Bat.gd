@@ -5,9 +5,13 @@ class_name Bat
 var chargeMode = false
 @onready var prevXPosition = global_position.x
 @onready var initialRotation = rotation
+@onready var initialScale = scale
 
 @export var rotationScale: float
 @export var maxVelocity: float
+
+var tiltRotation: float = 0.0
+var pullbackRotation: float = 0.0
 
 func _ready():
 	pass
@@ -39,8 +43,16 @@ func _process(_delta):
 	var xVelocity = global_position.x - prevXPosition
 	var ratio = clamp(xVelocity / maxVelocity, -1, 1)
 	var angle = asin(ratio) * rotationScale
-	rotation = initialRotation + lerp(rotation - initialRotation, angle, 0.1)
+	tiltRotation = lerp(tiltRotation, angle, 0.1)
+	rotation =  initialRotation + pullbackRotation + tiltRotation
 	prevXPosition = global_position.x
 	
 	global_position = get_global_mouse_position()
+	
+	if chargeMode:
+		scale = lerp(scale, initialScale * 1.2, 0.1)
+		pullbackRotation = lerp(pullbackRotation, PI / 64.0, 0.1)
+	else:
+		scale = initialScale
+		pullbackRotation = 0
 	
