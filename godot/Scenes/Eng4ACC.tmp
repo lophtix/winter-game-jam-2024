@@ -1,21 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://qbir6oickgah"]
 
 [ext_resource type="PackedScene" uid="uid://gjlppxpv6bxt" path="res://Scenes/Game.tscn" id="1_fl6fb"]
-[ext_resource type="Script" path="res://Scripts/Engine.gd" id="1_nvmyj"]
+[ext_resource type="Script" path="res://Scenes/Engine.gd" id="1_nvmyj"]
 [ext_resource type="PackedScene" uid="uid://dski00ajvpwpw" path="res://Scenes/Menu.tscn" id="2_4rem4"]
 
-[node name="GameEngine" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="GameEngine" type="Node2D"]
 script = ExtResource("1_nvmyj")
 
 [node name="Game" parent="." instance=ExtResource("1_fl6fb")]
 visible = false
 
 [node name="Menu" parent="." node_paths=PackedStringArray("engine") instance=ExtResource("2_4rem4")]
-layout_mode = 1
+offset_left = 199.023
+offset_top = 169.848
+offset_right = 239.023
+offset_bottom = 209.848
 engine = NodePath("..")
