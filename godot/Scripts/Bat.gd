@@ -37,7 +37,7 @@ func _input(event):
 		var bodies: Array[Node2D] = $WhackArea.get_overlapping_bodies()
 		for body in bodies:
 			if body is Shoe:
-				body.whack(1, Vector2(0,0))
+				body.whack(0.2, Vector2(0,0))
 
 func _process(_delta):
 	var xVelocity = global_position.x - prevXPosition

@@ -9,10 +9,8 @@ var flying : bool
 var time_flying_current : float 
 var time_flying_max : float
 
-var start_position : Vector2
-var end_position : Vector2
-
-const z_offset : float = 5
+var start_position : Vector3
+var end_position : Vector3
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,9 +27,9 @@ func _process(delta):
 			time_flying_current = time_flying_max
 			flying = false
 		
-		lerp(start_position, end_position, time_flying_current/time_flying_max)
+		position = lerp(start_position, end_position, time_flying_current/time_flying_max)
 
-func set_movement(from : Vector2, to : Vector2, duration : float):
+func set_movement(from : Vector3, to : Vector3, duration : float):
 	flying = true
 	
 	time_flying_current = 0
