@@ -13,6 +13,8 @@ class_name GameBox
 @export var lid_height = 0.5
 @export var lid_depth = 2.1
 
+@onready var game3d: Game3D = $"../"
+
 func get_box_color_path():
 	match box_color:
 		Shoe.ShoeType.ORANGE:
@@ -67,6 +69,10 @@ func _ready() -> void:
 
 func handle_new_shoe(shoe_type: Shoe.ShoeType):
 	var score = 30
+	if box_color == shoe_type:
+		score *= 4
+	
+	game3d.engine.add_score(score)
 
 func _on_body_entered(body):
 	if body is FlyingShoe:
