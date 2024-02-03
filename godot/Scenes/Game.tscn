@@ -13,8 +13,10 @@
 script = ExtResource("1_jw4l1")
 shoes = Array[PackedScene]([ExtResource("2_bl5jx"), ExtResource("3_3cwyi"), ExtResource("4_sj4jl"), ExtResource("5_5ojn7"), ExtResource("6_ceenr")])
 container = NodePath("ShoeContainer")
-spawnTimeLow = 0.3
-spawnTimeHigh = 1.2
+spawnTimeLow = 0.1
+spawnTimeHigh = 0.2
+gameTime = 5.0
+gameEndTime = 5.0
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(576, 328)
