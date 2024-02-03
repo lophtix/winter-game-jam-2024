@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm5rrd7eoir4t"]
+
+[ext_resource type="PackedScene" uid="uid://cg75ghx351xjb" path="res://Scenes/Box.tscn" id="1_v4omr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rjsq6"]
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lucwn"]
+size = Vector2(10, 10)
+center_offset = Vector3(0, 0.1, 0)
+
+[node name="3dTest" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.99998, 0.00553539, -0.00319583, -1.49013e-08, 0.499998, 0.866027, 0.0063917, -0.866009, 0.499988, 0, 4.83429, 3.02182)
+shadow_enabled = true
+
+[node name="Box" parent="." instance=ExtResource("1_v4omr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1537, -1.33138)
+
+[node name="Box2" parent="." instance=ExtResource("1_v4omr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78672, 3.7954, -1.33138)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+gravity_scale = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_rjsq6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("PlaneMesh_lucwn")
