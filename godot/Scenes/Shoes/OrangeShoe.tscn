@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5h8ed6o14wg7"]
+
+[ext_resource type="Script" path="res://Scripts/Shoe.gd" id="1_mbb3t"]
+[ext_resource type="Texture2D" uid="uid://dc1483mrm6tqu" path="res://assets/orange/OrangeShoe1.png" id="2_8glng"]
+
+[node name="Shoe" type="RigidBody2D"]
+script = ExtResource("1_mbb3t")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_8glng")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-25, -25, 4, 10, 30, 20, 25, 25, -6, 24, -16, 5, -16, 24, -30, 25, -31, -13)
