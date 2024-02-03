@@ -4,6 +4,7 @@ class_name Game
 
 @onready var engine : GameEngine = get_node_or_null("../../")
 @onready var game3d : Game3D = get_node("../SubViewportContainer/SubViewport/Game3D")
+@onready var ui : UI = get_node("../UI")
 
 @export var shoes: Array[PackedScene]
 @export var container : Node2D
@@ -39,6 +40,9 @@ func handle_timeout():
 	container.add_child(shoeInstance)
 
 func _process(delta):
+	if timer != null:
+		ui.set_timer(timer.time_left)
+		
 	if spawn:
 		spawnTimer -= delta
 		if spawnTimer <= 0:

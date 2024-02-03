@@ -72,7 +72,7 @@ func handle_new_shoe(shoe_type: Shoe.ShoeType):
 	if box_color == shoe_type:
 		score *= 4
 	
-	game3d.engine.add_score(score)
+	game3d.game.add_score(score)
 
 func _on_body_entered(body):
 	if body is FlyingShoe:
