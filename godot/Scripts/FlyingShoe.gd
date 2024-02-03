@@ -2,7 +2,7 @@ extends RigidBody3D
 
 class_name FlyingShoe
 
-@onready var sprite : Sprite3D = $Sprite3D
+@onready var sprite : Sprite3D = $Sprite
 
 var flying : bool
 

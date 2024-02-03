@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgh86f40gaf41"
-path="res://.godot/imported/YellowShoe1.png-a0e90499e60d82efa5ceb273d8848588.ctex"
+uid="uid://ogkiijopiuva"
+path="res://.godot/imported/RedShoe1.png-b95e7f4e838625e63221ad015a518d39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/YellowShoe1.png"
-dest_files=["res://.godot/imported/YellowShoe1.png-a0e90499e60d82efa5ceb273d8848588.ctex"]
+source_file="res://assets/red/RedShoe1.png"
+dest_files=["res://.godot/imported/RedShoe1.png-b95e7f4e838625e63221ad015a518d39.ctex"]
 
 [params]
 

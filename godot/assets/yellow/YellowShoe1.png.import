@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hlg2l5700vjb"
-path="res://.godot/imported/GreenShoe1.png-07c91c69a45c370a7e4758d6d948296d.ctex"
+uid="uid://dgh86f40gaf41"
+path="res://.godot/imported/YellowShoe1.png-30c39e1174f68af904b9352b12a9e410.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/GreenShoe1.png"
-dest_files=["res://.godot/imported/GreenShoe1.png-07c91c69a45c370a7e4758d6d948296d.ctex"]
+source_file="res://assets/yellow/YellowShoe1.png"
+dest_files=["res://.godot/imported/YellowShoe1.png-30c39e1174f68af904b9352b12a9e410.ctex"]
 
 [params]
 
