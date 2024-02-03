@@ -22,12 +22,13 @@ func _ready():
 
 	spawn = true
 
-	timer = Timer.new()
-	add_child(timer)
-	timer.one_shot = true
-	timer.wait_time = gameTime
-	timer.timeout.connect(_on_time_up)
-	timer.start()
+	if gameTime >= 0:
+		timer = Timer.new()
+		add_child(timer)
+		timer.one_shot = true
+		timer.wait_time = gameTime
+		timer.timeout.connect(_on_time_up)
+		timer.start()
 
 func handle_timeout():
 	var shoeNode = shoes[randi() % shoes.size()]

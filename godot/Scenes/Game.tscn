@@ -1,31 +1,32 @@
 [gd_scene load_steps=9 format=3 uid="uid://d01spn6cqch4b"]
 
-[ext_resource type="Script" path="res://Scripts/Game.gd" id="1_jw4l1"]
-[ext_resource type="PackedScene" uid="uid://drgm0xh2jcavp" path="res://Scenes/Shoes/BlueShoe.tscn" id="2_bl5jx"]
-[ext_resource type="PackedScene" uid="uid://diox8phfgjeou" path="res://Scenes/Bat.tscn" id="2_iuflg"]
-[ext_resource type="Texture2D" uid="uid://dg44k1ajjw6i4" path="res://assets/background.png" id="3_1vuno"]
-[ext_resource type="PackedScene" uid="uid://dmjxj20vlcdu8" path="res://Scenes/Shoes/RedShoe.tscn" id="3_3cwyi"]
-[ext_resource type="PackedScene" uid="uid://ckvrkqwdgs1ql" path="res://Scenes/Shoes/GreenShoe.tscn" id="4_sj4jl"]
-[ext_resource type="PackedScene" uid="uid://c6quxrwmpsfnc" path="res://Scenes/Shoes/YellowShoe.tscn" id="5_5ojn7"]
-[ext_resource type="PackedScene" uid="uid://c5h8ed6o14wg7" path="res://Scenes/Shoes/OrangeShoe.tscn" id="6_ceenr"]
+[ext_resource type="Script" path="res://Scripts/Game.gd" id="1_c2d2a"]
+[ext_resource type="PackedScene" uid="uid://drgm0xh2jcavp" path="res://Scenes/Shoes/BlueShoe.tscn" id="2_3slkk"]
+[ext_resource type="PackedScene" uid="uid://dmjxj20vlcdu8" path="res://Scenes/Shoes/RedShoe.tscn" id="3_emhr1"]
+[ext_resource type="PackedScene" uid="uid://ckvrkqwdgs1ql" path="res://Scenes/Shoes/GreenShoe.tscn" id="4_w1jk3"]
+[ext_resource type="PackedScene" uid="uid://c6quxrwmpsfnc" path="res://Scenes/Shoes/YellowShoe.tscn" id="5_icy6j"]
+[ext_resource type="PackedScene" uid="uid://c5h8ed6o14wg7" path="res://Scenes/Shoes/OrangeShoe.tscn" id="6_c7whu"]
+[ext_resource type="Texture2D" uid="uid://dg44k1ajjw6i4" path="res://assets/background.png" id="7_wrcqg"]
+[ext_resource type="PackedScene" uid="uid://diox8phfgjeou" path="res://Scenes/Bat.tscn" id="8_rfrsb"]
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("container")]
-script = ExtResource("1_jw4l1")
-shoes = Array[PackedScene]([ExtResource("2_bl5jx"), ExtResource("3_3cwyi"), ExtResource("4_sj4jl"), ExtResource("5_5ojn7"), ExtResource("6_ceenr")])
+script = ExtResource("1_c2d2a")
+shoes = Array[PackedScene]([ExtResource("2_3slkk"), ExtResource("3_emhr1"), ExtResource("4_w1jk3"), ExtResource("5_icy6j"), ExtResource("6_c7whu")])
 container = NodePath("ShoeContainer")
 spawnTimeLow = 0.1
 spawnTimeHigh = 0.2
-gameTime = 5.0
+gameTime = -1.0
 gameEndTime = 5.0
 
 [node name="Background" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(576, 328)
 scale = Vector2(0.602083, 0.605556)
-texture = ExtResource("3_1vuno")
+texture = ExtResource("7_wrcqg")
 
 [node name="ShoeContainer" type="Node2D" parent="."]
 
-[node name="Bat" parent="." instance=ExtResource("2_iuflg")]
+[node name="Bat" parent="." instance=ExtResource("8_rfrsb")]
 rotationScale = 0.25
 maxVelocity = 4.0
 

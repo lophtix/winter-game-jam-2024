@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dm5rrd7eoir4t"]
+[gd_scene load_steps=5 format=3 uid="uid://dm65twds18gp2"]
 
 [ext_resource type="PackedScene" uid="uid://cg75ghx351xjb" path="res://Scenes/GameBox.tscn" id="1_v4omr"]
 [ext_resource type="Texture2D" uid="uid://dg44k1ajjw6i4" path="res://assets/background.png" id="2_ju3lm"]
