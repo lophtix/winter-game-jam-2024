@@ -1,14 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://diox8phfgjeou"]
+[gd_scene load_steps=6 format=3 uid="uid://diox8phfgjeou"]
 
 [ext_resource type="Texture2D" uid="uid://bsjnuniem87k1" path="res://assets/Bat.png" id="1_4eyhf"]
 [ext_resource type="Script" path="res://Scripts/Bat.gd" id="1_axv60"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yi10k"]
-size = Vector2(172, 588)
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qb77v"]
-radius = 90.0
-height = 450.0
+radius = 40.0
+height = 255.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3q7sd"]
+radius = 37.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_plail"]
+radius = 27.5
 
 [node name="Bat" type="StaticBody2D"]
 rotation = 1.5708
@@ -18,12 +21,19 @@ script = ExtResource("1_axv60")
 [node name="Bat" type="Sprite2D" parent="."]
 texture = ExtResource("1_4eyhf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -3)
-shape = SubResource("RectangleShape2D_yi10k")
+[node name="WhackArea" type="Area2D" parent="."]
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-2.5, -72.5)
+[node name="WhackCollider" type="CollisionShape2D" parent="WhackArea"]
+position = Vector2(-0.000380099, -105)
 shape = SubResource("CapsuleShape2D_qb77v")
+
+[node name="BatCollider1" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-37.5007, -200, -14.9993, 182.5, 12.5007, 185, 37.4993, -195)
+
+[node name="BatCollider2" type="CollisionShape2D" parent="."]
+position = Vector2(-0.000714948, -197.5)
+shape = SubResource("CircleShape2D_3q7sd")
+
+[node name="BatCollider3" type="CollisionShape2D" parent="."]
+position = Vector2(0.000742098, 205)
+shape = SubResource("CircleShape2D_plail")
