@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tyqnsrmj671"
-path="res://.godot/imported/OrangeTop1.png-a132ac1a09018f769fb981ae9e405205.ctex"
+uid="uid://cj6jynd3dtqgd"
+path="res://.godot/imported/BlueTop1.png-d6b5b0b77bdfa8f35ddb00df320d88c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/OrangeTop1.png"
-dest_files=["res://.godot/imported/OrangeTop1.png-a132ac1a09018f769fb981ae9e405205.ctex"]
+source_file="res://assets/blue/BlueTop1.png"
+dest_files=["res://.godot/imported/BlueTop1.png-d6b5b0b77bdfa8f35ddb00df320d88c9.ctex"]
 
 [params]
 
