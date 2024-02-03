@@ -1,7 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bcs8tj12l00t3"]
+[gd_scene load_steps=3 format=3 uid="uid://qbir6oickgah"]
 
 [ext_resource type="PackedScene" uid="uid://gjlppxpv6bxt" path="res://Scenes/Game.tscn" id="1_fl6fb"]
+[ext_resource type="PackedScene" path="res://Scenes/Menu.tscn" id="2_4rem4"]
 
 [node name="Engine" type="Node2D"]
 
 [node name="Game" parent="." instance=ExtResource("1_fl6fb")]
+position = Vector2(199.023, 169.848)
+
+[node name="Menu" parent="." instance=ExtResource("2_4rem4")]
+offset_left = 199.023
+offset_top = 169.848
+offset_right = 239.023
+offset_bottom = 209.848

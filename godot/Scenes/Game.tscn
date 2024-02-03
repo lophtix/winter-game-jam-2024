@@ -2,18 +2,19 @@
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_jw4l1"]
 [ext_resource type="PackedScene" uid="uid://diox8phfgjeou" path="res://Scenes/Bat.tscn" id="2_iuflg"]
-[ext_resource type="PackedScene" uid="uid://dski00ajvpwpw" path="res://Scenes/Menu.tscn" id="3_xl08a"]
+[ext_resource type="Texture2D" uid="uid://dg44k1ajjw6i4" path="res://assets/background.png" id="3_1vuno"]
 
-[node name="Engine" type="Node2D"]
-
-[node name="Game" type="Node2D" parent="." node_paths=PackedStringArray("container")]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("container")]
 script = ExtResource("1_jw4l1")
 container = NodePath("ShoeContainer")
 spawnTimeLow = 0.3
 spawnTimeHigh = 1.2
 
-[node name="ShoeContainer" type="Node2D" parent="Game"]
+[node name="ShoeContainer" type="Node2D" parent="."]
 
-[node name="Bat" parent="Game" instance=ExtResource("2_iuflg")]
+[node name="Bat" parent="." instance=ExtResource("2_iuflg")]
 
-[node name="Menu" parent="." instance=ExtResource("3_xl08a")]
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 328)
+scale = Vector2(0.602083, 0.605556)
+texture = ExtResource("3_1vuno")
