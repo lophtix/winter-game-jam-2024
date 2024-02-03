@@ -18,8 +18,6 @@ texture = ExtResource("3_1vuno")
 [node name="ShoeContainer" type="Node2D" parent="."]
 
 [node name="Bat" parent="." instance=ExtResource("2_iuflg")]
-rotationScale = 0.25
-maxVelocity = 4.0
 
 [node name="Button" type="Button" parent="."]
 offset_right = 8.0

@@ -9,7 +9,6 @@ class_name Shoe
 func _process(_delta):
 	if global_position.y > get_viewport_rect().size.y * 1.2:
 		queue_free()
-		
 
 func whack(bat_strength : float, bat_vector : Vector2):
 	# Spawn 3D shoe and hand it to 3D engine to use
@@ -20,15 +19,13 @@ func whack(bat_strength : float, bat_vector : Vector2):
 	var to = from
 	
 	# Make shoe fly
-	flying_shoe.set_movement(from, to)
+	flying_shoe.set_movement(from, to, 5)
 	
 	# Have shoe look like this shoe
-	flying_shoe.set_looks(self)
+	flying_shoe.set_looks(sprite.texture)
 	
 	# Hand shoe to 3d engine for it to use
 	# engine3d.add_shoe(flying_shoe)
 	
 	queue_free()
 
-func get_textute():
-	return sprite.texture
