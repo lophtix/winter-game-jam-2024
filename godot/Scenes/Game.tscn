@@ -10,11 +10,11 @@ container = NodePath("ShoeContainer")
 spawnTimeLow = 0.3
 spawnTimeHigh = 1.2
 
-[node name="ShoeContainer" type="Node2D" parent="."]
-
-[node name="Bat" parent="." instance=ExtResource("2_iuflg")]
-
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(576, 328)
 scale = Vector2(0.602083, 0.605556)
 texture = ExtResource("3_1vuno")
+
+[node name="ShoeContainer" type="Node2D" parent="."]
+
+[node name="Bat" parent="." instance=ExtResource("2_iuflg")]
