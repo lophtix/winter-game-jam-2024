@@ -34,13 +34,13 @@ func get_box_color_path():
 func _ready() -> void:
 	# TODO: Ugly, fix later...
 	var box_size = Vector3(3, 1.25, 2)
-	var lid_size = Vector3(3.1, 0.5, 2.1)    
-	
+	var lid_size = Vector3(3.1, 0.5, 2.1)
+
 	# Set box collision shape
 	var box_shape = BoxShape3D.new()
 	box_shape.set_size(box_size)
 	$BoxCollisionShape.shape = box_shape
-	
+
 	# Set box mesh
 	var box_mesh = BoxMesh.new()
 	var box_material = StandardMaterial3D.new()
@@ -50,12 +50,12 @@ func _ready() -> void:
 	box_mesh.material = box_material
 	box_mesh.size = box_size
 	$BoxCollisionShape/MeshInstance3D.mesh = box_mesh
-	
+
 	# Set lid collision shape
 	var lid_shape = BoxShape3D.new()
 	lid_shape.set_size(box_size)
 	$LidCollisionShape.shape = lid_shape
-	
+
 	# Set lid mesh
 	var lid_mesh = BoxMesh.new()
 	var lid_material = StandardMaterial3D.new()
@@ -71,14 +71,14 @@ func handle_new_shoe(shoe_type: Shoe.ShoeType):
 	var score = 30
 	if box_color == shoe_type:
 		score *= 4
-	
+
 	game3d.game.add_score(score)
 
 func _on_body_entered(body):
 	if body is FlyingShoe:
 		# Save data from shoe
 		var shoe_type = body.shoe_type
-		
+
 		body.queue_free()
-		
+
 		handle_new_shoe(shoe_type)
