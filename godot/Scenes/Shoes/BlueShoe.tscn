@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://drgm0xh2jcavp"]
+
+[ext_resource type="Script" path="res://Scripts/Shoe.gd" id="1_smiis"]
+[ext_resource type="Texture2D" uid="uid://biseiyeu5lepq" path="res://assets/blue/BlueShoe1.png" id="2_j43b8"]
+
+[node name="Shoe" type="RigidBody2D"]
+script = ExtResource("1_smiis")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_j43b8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(32, -19, 15, 29, -18, 21, -32, -2, -2, -6, 8, -30)

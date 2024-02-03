@@ -4,7 +4,7 @@ class_name Game
 
 var engine : GameEngine
 
-var shoeNode = preload("res://Scenes/Shoe.tscn")
+@export var shoes: Array[PackedScene]
 @export var container : Node2D
 @export var spawnTimeLow = 3.0
 @export var spawnTimeHigh = 6.0
@@ -14,6 +14,7 @@ func _ready():
 	engine = get_node_or_null("..")
 
 func handle_timeout():
+	var shoeNode = shoes[randi() % shoes.size()]
 	var shoeInstance = shoeNode.instantiate()
 	var screenWidth = get_viewport_rect().size.x
 	var xPosition = randf() * screenWidth

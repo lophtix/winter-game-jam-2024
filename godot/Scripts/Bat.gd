@@ -21,12 +21,16 @@ func _input(event):
 	
 	if is_left_click_down or is_whack_down:
 		chargeMode = true
-		$CollisionShape2D.disabled = true
+		$BatCollider1.disabled = true
+		$BatCollider2.disabled = true
+		$BatCollider3.disabled = true
 		
 	if is_left_click_up or is_whack_up:
 		chargeMode = false
-		$CollisionShape2D.disabled = false
-		var bodies: Array[Node2D] = $Area2D.get_overlapping_bodies()
+		$BatCollider1.disabled = false
+		$BatCollider2.disabled = false
+		$BatCollider3.disabled = false
+		var bodies: Array[Node2D] = $WhackArea.get_overlapping_bodies()
 		for body in bodies:
 			if body is Shoe:
 				body.whack(1, Vector2(0,0))
