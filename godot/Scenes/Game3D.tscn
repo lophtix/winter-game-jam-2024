@@ -52,3 +52,5 @@ mesh = SubResource("PlaneMesh_lucwn")
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 0, 2.5, -5)
 texture = ExtResource("2_ju3lm")
+
+[node name="Shoe Container" type="Node3D" parent="."]
