@@ -1,22 +1,45 @@
-extends Area2D
+extends StaticBody2D
 
 class_name Bat
 
 var currentShoe: Shoe = null
+var chargeMode = false
+@onready var prevXPosition = global_position.x
+@onready var initialRotation = rotation
+
+@export var rotationScale: float
+@export var maxVelocity: float
 
 func _ready():
-	connect("body_entered", on_body_entered)
-	connect("body_exited", on_body_exited)
+	$Area2D.connect("body_entered", on_body_entered)
+	$Area2D.connect("body_exited", on_body_exited)
 	pass
 	
 func _input(event):
 	var is_left_click = event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT
+	var is_left_click_down = is_left_click and event.pressed
+	var is_left_click_up = is_left_click and not event.pressed
 	var is_whack_down = event is InputEventKey and event.is_action_pressed("Whack")
-	if (is_left_click or is_whack_down) and currentShoe != null:
-		currentShoe.whack(1, Vector2(0,0))
-		pass
+	var is_whack_up = event is InputEventKey and event.is_action_released("Whack")
+	
+	if is_left_click_down or is_whack_down:
+		chargeMode = true
+		$CollisionShape2D.disabled = true
+		
+	if is_left_click_up or is_whack_up:
+		chargeMode = false
+		$CollisionShape2D.disabled = false
+		var bodies: Array[Node2D] = $Area2D.get_overlapping_bodies()
+		for body in bodies:
+			if body is Shoe:
+				body.whack(1, Vector2(0,0))
 
 func _process(_delta):
+	var xVelocity = global_position.x - prevXPosition
+	var ratio = clamp(xVelocity / maxVelocity, -1, 1)
+	var angle = asin(ratio) * rotationScale
+	rotation = initialRotation + lerp(rotation - initialRotation, angle, 0.1)
+	prevXPosition = global_position.x
 	pass
 
 func on_body_entered(body):

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://qbir6oickgah"]
 
 [ext_resource type="Script" path="res://Scripts/Engine.gd" id="1_nvmyj"]
-[ext_resource type="PackedScene" uid="uid://dski00ajvpwpw" path="res://Scenes/Menu.tscn" id="2_4rem4"]
+[ext_resource type="PackedScene" path="res://Scenes/Menu.tscn" id="2_4rem4"]
 
 [node name="GameEngine" type="Control"]
 layout_mode = 3
