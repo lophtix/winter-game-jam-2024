@@ -5,6 +5,7 @@
 
 [node name="Shoe" type="RigidBody2D"]
 script = ExtResource("1_hnia8")
+shoe_type = 1
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.6, 0.6)

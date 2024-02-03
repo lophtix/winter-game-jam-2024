@@ -10,6 +10,8 @@ var chargeMode = false
 @export var rotationScale: float
 @export var maxVelocity: float
 
+@export var batStrength: float = 1
+
 var tiltRotation: float = 0.0
 var pullbackRotation: float = 0.0
 
@@ -37,7 +39,7 @@ func _input(event):
 		var bodies: Array[Node2D] = $WhackArea.get_overlapping_bodies()
 		for body in bodies:
 			if body is Shoe:
-				body.whack(0.2, Vector2(0,0))
+				body.whack(1/batStrength, Vector2(0,0))
 
 func _process(_delta):
 	var xVelocity = global_position.x - prevXPosition

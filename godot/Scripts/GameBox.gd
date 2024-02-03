@@ -8,9 +8,16 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if self.has_overlapping_bodies():
+func handle_new_shoe():
+	pass
+
+
+func _on_body_entered(body):
+	if body is FlyingShoe:
+		# Save data from shoe
+		
 		print("Collision detected!")
 		
-	pass
+		body.queue_free()
+		
+		handle_new_shoe()

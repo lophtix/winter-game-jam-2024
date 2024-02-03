@@ -2,6 +2,9 @@ extends RigidBody2D
 
 class_name Shoe
 
+@export var shoe_type : ShoeType = ShoeType.BLUE
+enum ShoeType { BLUE, GREEN, ORANGE, RED, YELLOW }
+
 @onready var sprite : Sprite2D = $Sprite
 @onready var flyingShoePacked : PackedScene = preload("res://Scenes/FlyingShoe.tscn")
 
@@ -20,12 +23,14 @@ func whack(bat_strength : float, bat_vector : Vector2):
 	var to = from
 	
 	flying_shoe.rotation.z = -rotation
+	flying_shoe.angular_velocity.z = -angular_velocity
 	
 	# Hand shoe to 3d engine for it to use
 	game.game3d.add_flying_shoe(flying_shoe, from, to, bat_strength)
 	
-	# Have shoe look like this shoe
+	# Have shoe look like this shoe and have the same type
 	flying_shoe.set_looks(sprite.texture)
+	flying_shoe.shoe_type = shoe_type
 
 	queue_free()
 

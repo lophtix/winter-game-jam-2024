@@ -16,9 +16,9 @@ func _process(delta):
 	pass
 
 func add_flying_shoe(flying_shoe : FlyingShoe, from : Vector2, to : Vector2, speed):
-	shoe_container.add_child(flying_shoe)
-	
 	var from_3d = camera.project_position(from, camera.near + offset_spawn)
-	var to_3d = camera.project_position(to, camera.position.z)
+	var to_3d = camera.project_position(to, abs(camera.position.z))
 	
 	flying_shoe.set_movement(from_3d, to_3d, speed)
+	
+	shoe_container.add_child(flying_shoe)

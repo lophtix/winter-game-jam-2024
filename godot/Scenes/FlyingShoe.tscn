@@ -9,7 +9,6 @@ radius = 0.866379
 [node name="FlyingShoe" type="RigidBody3D"]
 axis_lock_angular_x = true
 axis_lock_angular_y = true
-axis_lock_angular_z = true
 script = ExtResource("1_oktfo")
 
 [node name="Sprite" type="Sprite3D" parent="."]

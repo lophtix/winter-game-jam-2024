@@ -4,6 +4,8 @@ class_name FlyingShoe
 
 @onready var sprite : Sprite3D = $Sprite
 
+var shoe_type : Shoe.ShoeType
+
 var flying : bool
 
 var time_flying_current : float 
@@ -20,6 +22,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	print(angular_velocity)
+	print(rotation)
 	if flying:
 		time_flying_current += delta
 		
@@ -27,7 +31,10 @@ func _process(delta):
 			time_flying_current = time_flying_max
 			flying = false
 		
-		position = lerp(start_position, end_position, time_flying_current/time_flying_max)
+
+func _integrate_forces(state : PhysicsDirectBodyState3D):
+	if flying:
+		state.transform.origin = lerp(start_position, end_position, time_flying_current/time_flying_max)
 
 func set_movement(from : Vector3, to : Vector3, duration : float):
 	flying = true
@@ -37,6 +44,12 @@ func set_movement(from : Vector3, to : Vector3, duration : float):
 	
 	start_position = from
 	end_position = to
+	
+	position = start_position
+
+func set_type(shoe_type : Shoe.ShoeType):
+	self.shoe_type = shoe_type
+
 
 func set_looks(shoe_texture : Texture2D):
 	sprite.texture = shoe_texture

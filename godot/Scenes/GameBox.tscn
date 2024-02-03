@@ -44,3 +44,5 @@ shape = SubResource("BoxShape3D_7pbsy")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="LidCollisionShape"]
 mesh = SubResource("BoxMesh_y7pbn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
