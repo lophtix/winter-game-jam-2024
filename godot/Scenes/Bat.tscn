@@ -17,23 +17,28 @@ radius = 27.5
 rotation = 1.5708
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_axv60")
+rotationScale = 0.25
+maxVelocity = 4.0
 
 [node name="Bat" type="Sprite2D" parent="."]
+position = Vector2(0.0010633, -205.5)
 texture = ExtResource("1_4eyhf")
 
 [node name="WhackArea" type="Area2D" parent="."]
+position = Vector2(0.0010633, -205.5)
 
 [node name="WhackCollider" type="CollisionShape2D" parent="WhackArea"]
 position = Vector2(-0.000380099, -105)
 shape = SubResource("CapsuleShape2D_qb77v")
 
 [node name="BatCollider1" type="CollisionPolygon2D" parent="."]
+position = Vector2(0.0010633, -205.5)
 polygon = PackedVector2Array(-37.5007, -200, -14.9993, 182.5, 12.5007, 185, 37.4993, -195)
 
 [node name="BatCollider2" type="CollisionShape2D" parent="."]
-position = Vector2(-0.000714948, -197.5)
+position = Vector2(0.000348357, -403)
 shape = SubResource("CircleShape2D_3q7sd")
 
 [node name="BatCollider3" type="CollisionShape2D" parent="."]
-position = Vector2(0.000742098, 205)
+position = Vector2(0.0018054, -0.500046)
 shape = SubResource("CircleShape2D_plail")
