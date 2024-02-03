@@ -3,8 +3,9 @@ extends RigidBody2D
 class_name Shoe
 
 @onready var sprite : Sprite2D = $Sprite
-
 @onready var flyingShoePacked : PackedScene = preload("res://Scenes/FlyingShoe.tscn")
+
+var game: Game
 
 func _process(_delta):
 	if global_position.y > get_viewport_rect().size.y * 1.2:
@@ -23,6 +24,7 @@ func whack(bat_strength : float, bat_vector : Vector2):
 		
 	# Hand shoe to 3d engine for it to use
 	# engine3d.add_shoe(flying_shoe)
+	var game3d = game.game3d
 	
 	# Have shoe look like this shoe
 	#flying_shoe.set_looks(sprite.texture)

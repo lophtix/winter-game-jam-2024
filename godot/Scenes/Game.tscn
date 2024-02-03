@@ -1,38 +1,60 @@
-[gd_scene load_steps=9 format=3 uid="uid://d01spn6cqch4b"]
+[gd_scene load_steps=10 format=3 uid="uid://d01spn6cqch4b"]
 
-[ext_resource type="Script" path="res://Scripts/Game.gd" id="1_c2d2a"]
-[ext_resource type="PackedScene" uid="uid://drgm0xh2jcavp" path="res://Scenes/Shoes/BlueShoe.tscn" id="2_3slkk"]
-[ext_resource type="PackedScene" uid="uid://dmjxj20vlcdu8" path="res://Scenes/Shoes/RedShoe.tscn" id="3_emhr1"]
-[ext_resource type="PackedScene" uid="uid://ckvrkqwdgs1ql" path="res://Scenes/Shoes/GreenShoe.tscn" id="4_w1jk3"]
-[ext_resource type="PackedScene" uid="uid://c6quxrwmpsfnc" path="res://Scenes/Shoes/YellowShoe.tscn" id="5_icy6j"]
-[ext_resource type="PackedScene" uid="uid://c5h8ed6o14wg7" path="res://Scenes/Shoes/OrangeShoe.tscn" id="6_c7whu"]
-[ext_resource type="Texture2D" uid="uid://dg44k1ajjw6i4" path="res://assets/background.png" id="7_wrcqg"]
-[ext_resource type="PackedScene" uid="uid://diox8phfgjeou" path="res://Scenes/Bat.tscn" id="8_rfrsb"]
+[ext_resource type="Script" path="res://Scripts/Game.gd" id="1_jw4l1"]
+[ext_resource type="PackedScene" uid="uid://dm65twds18gp2" path="res://Scenes/Game3D.tscn" id="1_nnerr"]
+[ext_resource type="PackedScene" uid="uid://drgm0xh2jcavp" path="res://Scenes/Shoes/BlueShoe.tscn" id="2_bl5jx"]
+[ext_resource type="PackedScene" uid="uid://diox8phfgjeou" path="res://Scenes/Bat.tscn" id="2_iuflg"]
+[ext_resource type="Texture2D" uid="uid://dg44k1ajjw6i4" path="res://assets/background.png" id="3_1vuno"]
+[ext_resource type="PackedScene" uid="uid://dmjxj20vlcdu8" path="res://Scenes/Shoes/RedShoe.tscn" id="3_3cwyi"]
+[ext_resource type="PackedScene" uid="uid://ckvrkqwdgs1ql" path="res://Scenes/Shoes/GreenShoe.tscn" id="4_sj4jl"]
+[ext_resource type="PackedScene" uid="uid://c6quxrwmpsfnc" path="res://Scenes/Shoes/YellowShoe.tscn" id="5_5ojn7"]
+[ext_resource type="PackedScene" uid="uid://c5h8ed6o14wg7" path="res://Scenes/Shoes/OrangeShoe.tscn" id="6_ceenr"]
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("container")]
-script = ExtResource("1_c2d2a")
-shoes = Array[PackedScene]([ExtResource("2_3slkk"), ExtResource("3_emhr1"), ExtResource("4_w1jk3"), ExtResource("5_icy6j"), ExtResource("6_c7whu")])
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+own_world_3d = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Game3D" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_nnerr")]
+
+[node name="2D World" type="Node2D" parent="." node_paths=PackedStringArray("container")]
+script = ExtResource("1_jw4l1")
+shoes = Array[PackedScene]([ExtResource("2_bl5jx"), ExtResource("3_3cwyi"), ExtResource("4_sj4jl"), ExtResource("5_5ojn7"), ExtResource("6_ceenr")])
 container = NodePath("ShoeContainer")
-spawnTimeLow = 0.1
-spawnTimeHigh = 0.2
-gameTime = -1.0
-gameEndTime = 5.0
+spawnTimeLow = 0.3
+spawnTimeHigh = 1.2
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="2D World"]
 visible = false
 position = Vector2(576, 328)
 scale = Vector2(0.602083, 0.605556)
-texture = ExtResource("7_wrcqg")
+texture = ExtResource("3_1vuno")
 
-[node name="ShoeContainer" type="Node2D" parent="."]
+[node name="ShoeContainer" type="Node2D" parent="2D World"]
 
-[node name="Bat" parent="." instance=ExtResource("8_rfrsb")]
-rotationScale = 0.25
-maxVelocity = 4.0
+[node name="Bat" parent="2D World" instance=ExtResource("2_iuflg")]
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="2D World"]
 offset_right = 8.0
 offset_bottom = 8.0
 text = "End "
 
-[connection signal="pressed" from="Button" to="." method="end_game"]
+[connection signal="pressed" from="2D World/Button" to="2D World" method="end_game"]

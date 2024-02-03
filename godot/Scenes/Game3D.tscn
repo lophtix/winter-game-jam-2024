@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dm65twds18gp2"]
+[gd_scene load_steps=6 format=3 uid="uid://dm65twds18gp2"]
 
+[ext_resource type="Script" path="res://Scripts/Game3D.gd" id="1_k08ne"]
 [ext_resource type="PackedScene" uid="uid://cg75ghx351xjb" path="res://Scenes/GameBox.tscn" id="1_v4omr"]
 [ext_resource type="Texture2D" uid="uid://dg44k1ajjw6i4" path="res://assets/background.png" id="2_ju3lm"]
 
@@ -10,7 +11,8 @@ size = Vector3(10, 0.2, 10)
 size = Vector2(10, 10)
 center_offset = Vector3(0, 0.1, 0)
 
-[node name="3dTest" type="Node3D"]
+[node name="Game3D" type="Node3D"]
+script = ExtResource("1_k08ne")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.99998, 0.00553539, -0.00319583, -1.49013e-08, 0.499998, 0.866027, 0.0063917, -0.866009, 0.499988, 0, 4.83429, 3.02182)

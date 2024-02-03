@@ -2,7 +2,8 @@ extends Node2D
 
 class_name Game
 
-var engine : GameEngine
+@onready var engine : GameEngine = get_node_or_null("../../")
+@onready var game3d : Game3D = get_node("../SubViewportContainer/SubViewport/Game3D")
 
 @export var shoes: Array[PackedScene]
 @export var container : Node2D
@@ -18,8 +19,6 @@ var spawnTimer = 0
 var timer : Timer
 
 func _ready():
-	engine = get_node_or_null("..")
-
 	spawn = true
 
 	if gameTime >= 0:
@@ -36,6 +35,7 @@ func handle_timeout():
 	var screenWidth = get_viewport_rect().size.x
 	var xPosition = randf() * screenWidth
 	shoeInstance.position.x = xPosition
+	shoeInstance.game = self
 	container.add_child(shoeInstance)
 
 func _process(delta):
