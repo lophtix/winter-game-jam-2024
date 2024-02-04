@@ -24,3 +24,7 @@ func update_with_points(game : ActualGame):
 	
 	$Ui/Panel/MarginContainer/HBoxContainer/Packed/VBoxContainer/Amount.text = "%s x %s" % [game.packed_shoes, game.packed_shoes_points]
 	$Ui/Panel/MarginContainer/HBoxContainer/Packed/VBoxContainer/Points.text = "%s" % (game.packed_shoes * game.packed_shoes_points)
+
+
+func end_game():
+	$"../".end_game()

@@ -23,20 +23,24 @@ func start_game():
 
 
 func end_game():
-	game.queue_free()
-	game = null
+	if game:
+		game.queue_free()
+		game = null
+	
+	if score_screen:
+		score_screen.queue_free()
+		score_screen = null
 	
 	menu.show()
 
 
 func end_game_and_go_to_scores():
-	
 	score_screen = scorePacked.instantiate()
 	
-	print("Hit")
 	score_screen.update_with_points(game)
 	
 	game.queue_free()
 	game = null
 	
 	add_child(score_screen)
+
