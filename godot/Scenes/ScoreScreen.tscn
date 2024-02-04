@@ -106,30 +106,30 @@ layout_mode = 2
 text = "- 20"
 horizontal_alignment = 1
 
-[node name="Perfect" type="MarginContainer" parent="Ui/Panel/MarginContainer/HBoxContainer"]
+[node name="Packed" type="MarginContainer" parent="Ui/Panel/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_right = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Ui/Panel/MarginContainer/HBoxContainer/Perfect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Ui/Panel/MarginContainer/HBoxContainer/Packed"]
 layout_mode = 2
 alignment = 1
 
-[node name="What" type="Label" parent="Ui/Panel/MarginContainer/HBoxContainer/Perfect/VBoxContainer"]
+[node name="What" type="Label" parent="Ui/Panel/MarginContainer/HBoxContainer/Packed/VBoxContainer"]
 layout_mode = 2
-text = "Packed shoes"
+text = "Packed package"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Amount" type="Label" parent="Ui/Panel/MarginContainer/HBoxContainer/Perfect/VBoxContainer"]
+[node name="Amount" type="Label" parent="Ui/Panel/MarginContainer/HBoxContainer/Packed/VBoxContainer"]
 layout_mode = 2
-text = "2 x 20
+text = "2 x 100
 "
 horizontal_alignment = 1
 
-[node name="Points" type="Label" parent="Ui/Panel/MarginContainer/HBoxContainer/Perfect/VBoxContainer"]
+[node name="Points" type="Label" parent="Ui/Panel/MarginContainer/HBoxContainer/Packed/VBoxContainer"]
 layout_mode = 2
-text = "20 points"
+text = "200 points"
 horizontal_alignment = 1
 
 [node name="Pair" type="MarginContainer" parent="Ui/Panel/MarginContainer/HBoxContainer"]
@@ -158,28 +158,28 @@ layout_mode = 2
 text = "200 points"
 horizontal_alignment = 1
 
-[node name="Single" type="MarginContainer" parent="Ui/Panel/MarginContainer/HBoxContainer"]
+[node name="Perfect" type="MarginContainer" parent="Ui/Panel/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_right = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Ui/Panel/MarginContainer/HBoxContainer/Single"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Ui/Panel/MarginContainer/HBoxContainer/Perfect"]
 layout_mode = 2
 alignment = 1
 
-[node name="What" type="Label" parent="Ui/Panel/MarginContainer/HBoxContainer/Single/VBoxContainer"]
+[node name="What" type="Label" parent="Ui/Panel/MarginContainer/HBoxContainer/Perfect/VBoxContainer"]
 layout_mode = 2
-text = "Perfect package"
+text = "Perfect shoes"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Amount" type="Label" parent="Ui/Panel/MarginContainer/HBoxContainer/Single/VBoxContainer"]
+[node name="Amount" type="Label" parent="Ui/Panel/MarginContainer/HBoxContainer/Perfect/VBoxContainer"]
 layout_mode = 2
-text = "2 x 100
+text = "2 x 20
 "
 horizontal_alignment = 1
 
-[node name="Points" type="Label" parent="Ui/Panel/MarginContainer/HBoxContainer/Single/VBoxContainer"]
+[node name="Points" type="Label" parent="Ui/Panel/MarginContainer/HBoxContainer/Perfect/VBoxContainer"]
 layout_mode = 2
-text = "200 points"
+text = "20 points"
 horizontal_alignment = 1

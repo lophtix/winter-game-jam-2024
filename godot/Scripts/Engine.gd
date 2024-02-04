@@ -33,6 +33,7 @@ func end_game_and_go_to_scores():
 	
 	score_screen = scorePacked.instantiate()
 	
+	print("Hit")
 	score_screen.update_with_points(game)
 	
 	game.queue_free()

@@ -6,7 +6,7 @@ class_name ActualGame
 
 var total_score: int = 0
 
-const dropped_shoes_points : int = -5
+const dropped_shoes_points : int = -1
 var dropped_shoes : int = 0
 
 const packed_shoes_points : int = 20
