@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://browinbxdodqo"]
+[gd_scene load_steps=5 format=3 uid="uid://browinbxdodqo"]
 
 [ext_resource type="Script" path="res://Scripts/Game3D.gd" id="1_k08ne"]
 [ext_resource type="PackedScene" uid="uid://cg75ghx351xjb" path="res://Scenes/GameBox.tscn" id="1_v4omr"]
-[ext_resource type="Texture2D" uid="uid://dg44k1ajjw6i4" path="res://assets/background.png" id="2_ju3lm"]
+[ext_resource type="PackedScene" uid="uid://dltbds4wcql53" path="res://Scenes/Shelf.tscn" id="2_hqh7k"]
+[ext_resource type="Texture2D" uid="uid://b2ouuhnbomu1n" path="res://assets/Room.png" id="4_om4a8"]
 
 [node name="Game3D" type="Node3D"]
 script = ExtResource("1_k08ne")
@@ -11,37 +12,43 @@ script = ExtResource("1_k08ne")
 transform = Transform3D(0.99998, 0.00553539, -0.00319583, -1.49013e-08, 0.499998, 0.866027, 0.0063917, -0.866009, 0.499988, 0, 4.83429, 3.02182)
 shadow_enabled = true
 
+[node name="Shelf" parent="." instance=ExtResource("2_hqh7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.24751, -1.33892)
+
+[node name="Shelf2" parent="." instance=ExtResource("2_hqh7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.150124, -1.33892)
+
 [node name="Boxes" type="Node3D" parent="."]
 
 [node name="Box" parent="Boxes" instance=ExtResource("1_v4omr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73488, 0.740578, -1.33138)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73488, 0.417102, -1.33138)
 box_color = 0
 
 [node name="Box2" parent="Boxes" instance=ExtResource("1_v4omr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52058, 0.749088, -1.33138)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52058, 0.425612, -1.33138)
 box_color = 3
 
 [node name="Box5" parent="Boxes" instance=ExtResource("1_v4omr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.74395, 0.740578, -1.33138)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.74395, 0.417102, -1.33138)
 
 [node name="Box6" parent="Boxes" instance=ExtResource("1_v4omr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.03601, 0.749088, -1.33138)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.03601, 0.425612, -1.33138)
 box_color = 1
 
 [node name="Box3" parent="Boxes" instance=ExtResource("1_v4omr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73045, 3.11533, -1.33138)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73045, 3.47787, -1.33138)
 box_color = 0
 
 [node name="Box4" parent="Boxes" instance=ExtResource("1_v4omr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.59158, 3.14555, -1.33138)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.59158, 3.50809, -1.33138)
 box_color = 1
 
 [node name="Box7" parent="Boxes" instance=ExtResource("1_v4omr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.95571, 3.11533, -1.33138)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.95571, 3.47787, -1.33138)
 box_color = 4
 
 [node name="Box8" parent="Boxes" instance=ExtResource("1_v4omr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1205, 3.14555, -1.33138)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1205, 3.50809, -1.33138)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 70)
@@ -51,6 +58,6 @@ near = 50.0
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1.22, 0, 0, 0, 1.22, 0, 0, 0, 1.22, 0, 2.5, -5)
-texture = ExtResource("2_ju3lm")
+texture = ExtResource("4_om4a8")
 
 [node name="Shoe Container" type="Node3D" parent="."]

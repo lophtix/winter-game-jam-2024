@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddpb4suyuukid"
-path.s3tc="res://.godot/imported/PlainTop1.png-0607afdbfe472e0e81273e752e30b790.s3tc.ctex"
+uid="uid://b2ouuhnbomu1n"
+path.s3tc="res://.godot/imported/Room.png-449826a95938acea0e18b6c931f5f305.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/PlainTop1.png"
-dest_files=["res://.godot/imported/PlainTop1.png-0607afdbfe472e0e81273e752e30b790.s3tc.ctex"]
+source_file="res://assets/Room.png"
+dest_files=["res://.godot/imported/Room.png-449826a95938acea0e18b6c931f5f305.s3tc.ctex"]
 
 [params]
 

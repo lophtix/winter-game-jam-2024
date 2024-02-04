@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dltbds4wcql53"]
+
+[ext_resource type="Texture2D" uid="uid://dqfqoo2c1vsfm" path="res://assets/Shelf.png" id="1_shdtg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_unjbm"]
+size = Vector3(15, 0.5, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hpo40"]
+albedo_texture = ExtResource("1_shdtg")
+uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_oi0re"]
+material = SubResource("StandardMaterial3D_hpo40")
+size = Vector3(15, 0.5, 2.5)
+
+[node name="Shelf" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_unjbm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+mesh = SubResource("BoxMesh_oi0re")
+skeleton = NodePath("../..")
