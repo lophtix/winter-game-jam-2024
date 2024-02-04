@@ -7,9 +7,9 @@ class_name GameBox
 @export var box_color = Shoe.ShoeType.ORANGE
 #@export var box_type = "1"
 
-
 @onready var game3d: Game3D
 
+var last_shoe_type = null
 
 func set_type(type: Shoe.ShoeType):
 	box_color = type
@@ -27,11 +27,15 @@ func _ready() -> void:
 
 func handle_new_shoe(shoe_type: Shoe.ShoeType):
 	if game3d:
-		var score = 30
+		game3d.game.packed_shoes += 1
 		if box_color == shoe_type:
-			score *= 4
+			game3d.game.perfect_shoes += 1
+		if last_shoe_type == null && last_shoe_type == shoe_type:
+			game3d.game.paired_shoes += 1
 		
-		game3d.game.add_score(score)
+		game3d.game.update_score()
+		
+		last_shoe_type = shoe_type
 
 
 func _on_body_entered(body):

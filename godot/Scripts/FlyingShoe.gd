@@ -53,6 +53,5 @@ func set_movement(from : Vector3, to : Vector3, duration : float):
 func set_type(new_shoe_type : Shoe.ShoeType):
 	shoe_type = new_shoe_type
 
-
 func set_looks(shoe_texture : Texture2D):
 	sprite.texture = shoe_texture
