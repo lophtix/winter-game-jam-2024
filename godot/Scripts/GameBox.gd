@@ -13,7 +13,7 @@ class_name GameBox
 @export var lid_height = 0.5
 @export var lid_depth = 2.1
 
-@onready var game3d: Game3D = $"../"
+@onready var game3d: Game3D
 
 func get_box_color_path():
 	match box_color:
@@ -32,6 +32,10 @@ func get_box_color_path():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var game3d = get_node_or_null("../")
+	if game3d is Game3D:
+		self.game3d = game3d 
+	
 	# TODO: Ugly, fix later...
 	var box_size = Vector3(3, 1.25, 2)
 	var lid_size = Vector3(3.1, 0.5, 2.1)    
@@ -68,11 +72,12 @@ func _ready() -> void:
 
 
 func handle_new_shoe(shoe_type: Shoe.ShoeType):
-	var score = 30
-	if box_color == shoe_type:
-		score *= 4
-	
-	game3d.engine.add_score(score)
+	if game3d:
+		var score = 30
+		if box_color == shoe_type:
+			score *= 4
+		
+		game3d.engine.add_score(score)
 
 func _on_body_entered(body):
 	if body is FlyingShoe:
