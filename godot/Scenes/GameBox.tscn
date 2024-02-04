@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cg75ghx351xjb"]
+[gd_scene load_steps=4 format=3 uid="uid://cg75ghx351xjb"]
 
 [ext_resource type="Script" path="res://Scripts/GameBox.gd" id="1_4gcq6"]
 [ext_resource type="PackedScene" uid="uid://c1jw6lf363128" path="res://Scenes/VisualBox.tscn" id="2_e1jjc"]
+[ext_resource type="AudioStream" uid="uid://d3a6kv5pkud2u" path="res://assets/Audio/thwop.wav" id="3_x1hws"]
 
 [node name="GameBox" type="Node3D"]
 script = ExtResource("1_4gcq6")
 
 [node name="VisualBox" parent="." instance=ExtResource("2_e1jjc")]
+
+[node name="ThompPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_x1hws")
 
 [connection signal="body_entered" from="VisualBox" to="." method="_on_body_entered"]
