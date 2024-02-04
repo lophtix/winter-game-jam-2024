@@ -12,6 +12,15 @@ var boxes : Array[RigidBody3D]
 @export var spawnEnd : Vector3
 @export var spawnHeight : float
 
+const speed = 2
+
+func _ready():
+	for wheel in $Wheels.get_children():
+		wheel.rotation.z -= randf() * PI * 2
+
+func _process(delta):
+	for wheel in $Wheels.get_children():
+		wheel.rotation.z -= speed * delta
 
 # Called when the node enters the scene tree for the first time.
 func add_boxes(boxes_to_add : Array[VisualBox]):
