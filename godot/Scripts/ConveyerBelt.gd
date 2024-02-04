@@ -16,11 +16,13 @@ var boxes : Array[RigidBody3D]
 # Called when the node enters the scene tree for the first time.
 func add_boxes(boxes_to_add : Array[VisualBox]):
 	var spawnHeightStep = 0
-	for box in boxes_to_add:
+	for visual_box in boxes_to_add:
 		var score_box : Node3D = score_box_packed.instantiate()
-		var visual_box : VisualBox = score_box.find_child("VisualBox")
 		
-		visual_box.replace_by(box)
+		add_child(score_box)
+		
+		score_box.remove_child(score_box.find_child("VisualBox"))
+		score_box.add_child(visual_box.duplicate())
 		
 		boxes.append(score_box)
 		
@@ -30,8 +32,6 @@ func add_boxes(boxes_to_add : Array[VisualBox]):
 		score_box.position = lerp(spawnStart, spawnEnd, randf())
 		score_box.position.y += spawnHeightStep
 		spawnHeightStep += spawnHeight
-		
-		add_child(score_box)
 
 
 func add_boxes_from_game(game : ActualGame):

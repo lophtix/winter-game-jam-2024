@@ -33,7 +33,7 @@ spawnEnd = Vector3(-3, 2, 0)
 spawnHeight = 0.3
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.985241, 0.171173, 0, -0.171173, 0.985241, -4.76837e-07, 1.2313, 2.30349)
+transform = Transform3D(1, 0, 0, 0, 0.985241, 0.171173, 0, -0.171173, 0.985241, -4.76837e-07, 1.93897, 5.4538)
 
 [node name="Background" type="Node3D" parent="."]
 
