@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends AnimatableBody2D
 
 class_name Bat
 
@@ -46,16 +46,19 @@ func _input(event):
 			$BonkPlayer.play()
 		else:
 			$WooshPlayer.play()
+			
+func _physics_process(_delta):
+	transform = Transform2D(
+		initialRotation + pullbackRotation + tiltRotation, 
+		lerp(global_position, get_global_mouse_position(), 0.4)
+	)
 
 func _process(_delta):
 	var xVelocity = global_position.x - prevXPosition
 	var ratio = clamp(xVelocity / maxVelocity, -1, 1)
 	var angle = asin(ratio) * rotationScale
 	tiltRotation = lerp(tiltRotation, angle, 0.1)
-	rotation =  initialRotation + pullbackRotation + tiltRotation
 	prevXPosition = global_position.x
-
-	global_position = get_global_mouse_position()
 
 	if chargeMode:
 		scale = lerp(scale, initialScale * 1.2, 0.1)
