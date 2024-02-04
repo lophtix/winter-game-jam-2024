@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://diox8phfgjeou"]
+[gd_scene load_steps=8 format=3 uid="uid://diox8phfgjeou"]
 
 [ext_resource type="Texture2D" uid="uid://bsjnuniem87k1" path="res://assets/Bat.png" id="1_4eyhf"]
 [ext_resource type="Script" path="res://Scripts/Bat.gd" id="1_axv60"]
 [ext_resource type="AudioStream" uid="uid://y2utxvioabkx" path="res://assets/Audio/bonk-short.wav" id="3_2h2b1"]
+[ext_resource type="AudioStream" uid="uid://dipkrub263x6f" path="res://assets/Audio/woosh.wav" id="3_b3idn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qb77v"]
 radius = 40.0
@@ -44,5 +45,8 @@ shape = SubResource("CircleShape2D_3q7sd")
 position = Vector2(0.0018054, -0.500046)
 shape = SubResource("CircleShape2D_plail")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="WooshPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_b3idn")
+
+[node name="BonkPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_2h2b1")
