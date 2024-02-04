@@ -15,7 +15,7 @@ var packed_shoes : int = 0
 const paired_shoes_points : int = 40
 var paired_shoes : int = 0
 
-const perfect_shoes_points : int = 100
+const perfect_shoes_points : int = 40
 var perfect_shoes : int = 0
 
 func _ready():
