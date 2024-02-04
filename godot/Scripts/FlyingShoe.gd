@@ -50,8 +50,8 @@ func set_movement(from : Vector3, to : Vector3, duration : float):
 	
 	position = start_position
 
-func set_type(shoe_type : Shoe.ShoeType):
-	self.shoe_type = shoe_type
+func set_type(new_shoe_type : Shoe.ShoeType):
+	shoe_type = new_shoe_type
 
 
 func set_looks(shoe_texture : Texture2D):

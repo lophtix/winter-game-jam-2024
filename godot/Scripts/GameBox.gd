@@ -7,18 +7,23 @@ class_name GameBox
 @export var box_color = Shoe.ShoeType.ORANGE
 #@export var box_type = "1"
 
+
 @onready var game3d: Game3D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	var game3d = get_node_or_null("../")
-	if game3d is Game3D:
-		self.game3d = game3d 
+func set_type(type: Shoe.ShoeType):
+	box_color = type
 	
 	visual_box.set_shape(box_color)
 	visual_box.set_box_open(false)
 
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	var maybe_game3d = get_node_or_null("../")
+	if maybe_game3d is Game3D:
+		game3d = maybe_game3d 
+	
+	set_type(box_color)
 
 func handle_new_shoe(shoe_type: Shoe.ShoeType):
 	if game3d:
