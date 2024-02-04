@@ -14,8 +14,8 @@ var spawn
 @export var spawnTimeHigh = 6.0
 var spawnTimer = 0
 
-@export var gameTime = 30.0
-@export var gameEndTime = 4.0
+@export var gameTime = 1.0
+@export var gameEndTime = 1.0
 
 @export var marginPercent = 0.1
 

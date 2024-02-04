@@ -66,7 +66,6 @@ func set_shape(box_color : Shoe.ShoeType):
 	lid_mesh.material = lid_material
 	lid_mesh.size = lid_size
 	$LidCollisionShape/MeshInstance3D.mesh = lid_mesh
-	
 
 func set_box_open(open : bool):
 	$LidCollisionShape.visible = not open

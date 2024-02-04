@@ -38,6 +38,7 @@ func end_game_and_go_to_scores():
 	score_screen = scorePacked.instantiate()
 	
 	score_screen.update_with_points(game)
+	score_screen.fill_with_boxes(game)
 	
 	game.queue_free()
 	game = null

@@ -32,7 +32,6 @@ size = Vector3(3.1, 0.5, 2.1)
 script = ExtResource("1_tqetq")
 
 [node name="BoxCollisionShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.626444, 0)
 shape = SubResource("BoxShape3D_d7wh8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="BoxCollisionShape"]
@@ -40,7 +39,7 @@ mesh = SubResource("BoxMesh_h588w")
 skeleton = NodePath("../..")
 
 [node name="LidCollisionShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17644, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 shape = SubResource("BoxShape3D_t0cgs")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="LidCollisionShape"]
