@@ -57,7 +57,7 @@ func _process(_delta):
 	var xVelocity = global_position.x - prevXPosition
 	var ratio = clamp(xVelocity / maxVelocity, -1, 1)
 	var angle = asin(ratio) * rotationScale
-	tiltRotation = lerp(tiltRotation, angle, 0.1)
+	tiltRotation = lerp(tiltRotation, angle, 0.3)
 	prevXPosition = global_position.x
 
 	if chargeMode:
