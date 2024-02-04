@@ -34,11 +34,13 @@ func _ready():
 
 func handle_timeout():
 	var shoeNode = shoes[randi() % shoes.size()]
-	var shoeInstance = shoeNode.instantiate()
+	var shoeInstance: Shoe = shoeNode.instantiate()
 	var screenWidth = get_viewport_rect().size.x
 	var xPosition = lerp(screenWidth * marginPercent, screenWidth * (1 - marginPercent), randf())
 	shoeInstance.position.x = xPosition
 	shoeInstance.game = self
+	shoeInstance.rotation = (randf() * 2.0 - 1.0) * 4
+	shoeInstance.angular_velocity = (randf() * 2.0 - 1.0) * 4
 	container.add_child(shoeInstance)
 
 func _process(delta):
