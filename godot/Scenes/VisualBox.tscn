@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=3 uid="uid://c1jw6lf363128"]
+
+[ext_resource type="Texture2D" uid="uid://dkgcewsn3ip28" path="res://assets/orange/OrangeBox1.png" id="1_t6iud"]
+[ext_resource type="Script" path="res://Scripts/VisualBox.gd" id="1_tqetq"]
+[ext_resource type="Texture2D" uid="uid://w0mrgcaavmyj" path="res://assets/orange/OrangeTop1.png" id="2_28xx0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d7wh8"]
+size = Vector3(3, 1.25, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8fn51"]
+albedo_texture = ExtResource("1_t6iud")
+uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_h588w"]
+lightmap_size_hint = Vector2i(28, 33)
+material = SubResource("StandardMaterial3D_8fn51")
+size = Vector3(3, 1.25, 2)
+subdivide_depth = 10
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t0cgs"]
+size = Vector3(3.1, 0.5, 2.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6wu7n"]
+albedo_texture = ExtResource("2_28xx0")
+uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gmtno"]
+material = SubResource("StandardMaterial3D_6wu7n")
+size = Vector3(3.1, 0.5, 2.1)
+
+[node name="VisualBox" type="Area3D"]
+script = ExtResource("1_tqetq")
+
+[node name="BoxCollisionShape" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_d7wh8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BoxCollisionShape"]
+mesh = SubResource("BoxMesh_h588w")
+skeleton = NodePath("../..")
+
+[node name="LidCollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
+shape = SubResource("BoxShape3D_t0cgs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LidCollisionShape"]
+mesh = SubResource("BoxMesh_gmtno")
