@@ -29,9 +29,9 @@ func set_shape(box_color : Shoe.ShoeType):
 		1:
 			box_size = Vector3(3, 1.25, 2)
 		2:
-			box_size = Vector3(3, 2, 2)
+			box_size = Vector3(2.9, 1.6, 2)
 		3:
-			box_size = Vector3(2.75, 2, 2)
+			box_size = Vector3(2.75, 1.75, 2)
 	
 	
 	# Set box collision shape
