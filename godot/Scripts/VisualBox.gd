@@ -65,9 +65,6 @@ func set_shape(box_color : Shoe.ShoeType):
 	
 
 func set_box_open(open : bool):
-	if show:
-		$LidCollisionShape.visible = false
-	else:
-		$LidCollisionShape.visible = true
+	$LidCollisionShape.visible = not open
 
 

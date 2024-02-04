@@ -17,6 +17,8 @@ var spawnTimer = 0
 @export var gameTime = 30.0
 @export var gameEndTime = 4.0
 
+@export var marginPercent = 0.1
+
 var timer : Timer
 
 func _ready():
@@ -34,7 +36,7 @@ func handle_timeout():
 	var shoeNode = shoes[randi() % shoes.size()]
 	var shoeInstance = shoeNode.instantiate()
 	var screenWidth = get_viewport_rect().size.x
-	var xPosition = randf() * screenWidth
+	var xPosition = lerp(screenWidth * marginPercent, screenWidth * (1 - marginPercent), randf())
 	shoeInstance.position.x = xPosition
 	shoeInstance.game = self
 	container.add_child(shoeInstance)
