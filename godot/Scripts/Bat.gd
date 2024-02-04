@@ -7,7 +7,7 @@ var chargeMode = false
 @onready var initialRotation = rotation
 @onready var initialScale = scale
 
-@export var rotationScale: float
+@export var rotationScale: float = 0.1
 @export var maxVelocity: float
 
 @export var batStrength: float = 1
