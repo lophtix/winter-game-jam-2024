@@ -8,25 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://g27rd6jlydlv" path="res://assets/Buttons/Credits1.png" id="4_fk37b"]
 [ext_resource type="Texture2D" uid="uid://bb004gxbe6b3l" path="res://assets/Buttons/Credits2.png" id="5_llh1e"]
 [ext_resource type="Texture2D" uid="uid://otv0otdcd8ul" path="res://assets/GameIcon.png" id="6_6xi8g"]
-
-[sub_resource type="FontFile" id="FontFile_br2cr"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/65/0/ascent = 0.0
-cache/0/65/0/descent = 0.0
-cache/0/65/0/underline_position = 0.0
-cache/0/65/0/underline_thickness = 0.0
-cache/0/65/0/scale = 1.0
-cache/0/65/0/kerning_overrides/65/0 = Vector2(0, 0)
-cache/0/65/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/65/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+[ext_resource type="Texture2D" uid="uid://bcmt1xtp7af4s" path="res://assets/HomeScreen.png" id="9_ay7p7"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -36,6 +18,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4s1yw")
+
+[node name="HomeScreen" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_ay7p7")
+stretch_mode = 5
 
 [node name="Main" type="Control" parent="."]
 layout_mode = 1
@@ -60,40 +52,48 @@ texture = ExtResource("6_6xi8g")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Main"]
+[node name="Panel" type="Panel" parent="Main"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -227.0
-offset_top = -102.0
-offset_right = 227.0
-offset_bottom = 102.0
+offset_left = -197.5
+offset_top = -80.5
+offset_right = 197.5
+offset_bottom = 80.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Titel Label" type="Label" parent="Main/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_br2cr")
-theme_override_font_sizes/font_size = 65
-text = "Shoe Packeting"
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -223.5
+offset_top = -60.0
+offset_right = 223.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Main/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Main/Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 60
 theme_override_constants/margin_right = 60
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Main/VBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/Panel/VBoxContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Start Button" type="TextureButton" parent="Main/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Start Button" type="TextureButton" parent="Main/Panel/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("2_2xwyx")
 texture_hover = ExtResource("3_spdgh")
 
-[node name="Credit Button" type="TextureButton" parent="Main/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Credit Button" type="TextureButton" parent="Main/Panel/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("4_fk37b")
 texture_hover = ExtResource("5_llh1e")
@@ -205,9 +205,9 @@ texture = ExtResource("3_nc2a8")
 [node name="ButtonPressPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_qpv36")
 
-[connection signal="pressed" from="Main/VBoxContainer/MarginContainer/VBoxContainer/Start Button" to="." method="start_game"]
-[connection signal="pressed" from="Main/VBoxContainer/MarginContainer/VBoxContainer/Start Button" to="ButtonPressPlayer" method="play"]
-[connection signal="pressed" from="Main/VBoxContainer/MarginContainer/VBoxContainer/Credit Button" to="." method="show_credits"]
-[connection signal="pressed" from="Main/VBoxContainer/MarginContainer/VBoxContainer/Credit Button" to="ButtonPressPlayer" method="play"]
+[connection signal="pressed" from="Main/Panel/VBoxContainer/MarginContainer/VBoxContainer/Start Button" to="." method="start_game"]
+[connection signal="pressed" from="Main/Panel/VBoxContainer/MarginContainer/VBoxContainer/Start Button" to="ButtonPressPlayer" method="play"]
+[connection signal="pressed" from="Main/Panel/VBoxContainer/MarginContainer/VBoxContainer/Credit Button" to="." method="show_credits"]
+[connection signal="pressed" from="Main/Panel/VBoxContainer/MarginContainer/VBoxContainer/Credit Button" to="ButtonPressPlayer" method="play"]
 [connection signal="pressed" from="Credits/MarginContainer/Return Button" to="." method="show_main"]
 [connection signal="pressed" from="Credits/MarginContainer/Return Button" to="ButtonPressPlayer" method="play"]
