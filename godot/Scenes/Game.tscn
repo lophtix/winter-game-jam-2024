@@ -1,14 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://d01spn6cqch4b"]
+[gd_scene load_steps=12 format=3 uid="uid://d01spn6cqch4b"]
 
+[ext_resource type="Script" path="res://Scripts/UI.gd" id="1_be8qb"]
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_jw4l1"]
-[ext_resource type="PackedScene" uid="uid://dm65twds18gp2" path="res://Scenes/Game3D.tscn" id="1_nnerr"]
+[ext_resource type="PackedScene" uid="uid://browinbxdodqo" path="res://Scenes/Game3D.tscn" id="1_nnerr"]
+[ext_resource type="Script" path="res://Scripts/ActualGame.gd" id="1_sd5n5"]
 [ext_resource type="PackedScene" uid="uid://drgm0xh2jcavp" path="res://Scenes/Shoes/BlueShoe.tscn" id="2_bl5jx"]
 [ext_resource type="Texture2D" uid="uid://dg44k1ajjw6i4" path="res://assets/background.png" id="3_1vuno"]
 [ext_resource type="PackedScene" uid="uid://dmjxj20vlcdu8" path="res://Scenes/Shoes/RedShoe.tscn" id="3_3cwyi"]
 [ext_resource type="PackedScene" uid="uid://ckvrkqwdgs1ql" path="res://Scenes/Shoes/GreenShoe.tscn" id="4_sj4jl"]
 [ext_resource type="PackedScene" uid="uid://c6quxrwmpsfnc" path="res://Scenes/Shoes/YellowShoe.tscn" id="5_5ojn7"]
 [ext_resource type="PackedScene" uid="uid://c5h8ed6o14wg7" path="res://Scenes/Shoes/OrangeShoe.tscn" id="6_ceenr"]
-[ext_resource type="PackedScene" uid="uid://diox8phfgjeou" path="res://Scenes/Bat.tscn" id="9_4mp2t"]
+[ext_resource type="PackedScene" uid="uid://diox8phfgjeou" path="res://Scenes/Bat.tscn" id="9_a0kbc"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -17,6 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_sd5n5")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 layout_mode = 1
@@ -50,11 +53,44 @@ texture = ExtResource("3_1vuno")
 
 [node name="ShoeContainer" type="Node2D" parent="2D World"]
 
-[node name="Bat" parent="2D World" instance=ExtResource("9_4mp2t")]
+[node name="Bat" parent="2D World" instance=ExtResource("9_a0kbc")]
 
 [node name="Button" type="Button" parent="2D World"]
 offset_right = 8.0
 offset_bottom = 8.0
 text = "End "
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_be8qb")
+
+[node name="Score" type="RichTextLabel" parent="UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -123.0
+offset_top = 1.0
+offset_right = -29.0
+offset_bottom = 41.0
+grow_horizontal = 2
+text = "Score: %s"
+
+[node name="Timer" type="RichTextLabel" parent="UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 31.0
+offset_top = -1.0
+offset_right = 161.0
+offset_bottom = 39.0
+grow_horizontal = 2
+text = "Time Left: %02d:%02d"
 
 [connection signal="pressed" from="2D World/Button" to="2D World" method="end_game"]

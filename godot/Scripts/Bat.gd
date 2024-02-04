@@ -31,7 +31,8 @@ func _input(event):
 		$BatCollider2.disabled = true
 		$BatCollider3.disabled = true
 		
-	if is_left_click_up or is_whack_up:
+	if chargeMode and (is_left_click_up or is_whack_up):
+		$AudioStreamPlayer.play()
 		chargeMode = false
 		$BatCollider1.disabled = false
 		$BatCollider2.disabled = false
