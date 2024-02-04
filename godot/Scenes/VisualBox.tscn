@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://c1jw6lf363128"]
 
-[ext_resource type="Texture2D" uid="uid://dkgcewsn3ip28" path="res://assets/orange/OrangeBox1.png" id="1_t6iud"]
 [ext_resource type="Script" path="res://Scripts/VisualBox.gd" id="1_tqetq"]
-[ext_resource type="Texture2D" uid="uid://w0mrgcaavmyj" path="res://assets/orange/OrangeTop1.png" id="2_28xx0"]
+[ext_resource type="Texture2D" uid="uid://dixto7tnct500" path="res://assets/PlainBox1.png" id="2_y7ttr"]
+[ext_resource type="Texture2D" uid="uid://ddpb4suyuukid" path="res://assets/PlainTop1.png" id="3_584ak"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d7wh8"]
 size = Vector3(3, 1.25, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8fn51"]
-albedo_texture = ExtResource("1_t6iud")
+albedo_texture = ExtResource("2_y7ttr")
 uv1_scale = Vector3(3, 2, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_h588w"]
@@ -21,7 +21,7 @@ subdivide_depth = 10
 size = Vector3(3.1, 0.5, 2.1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6wu7n"]
-albedo_texture = ExtResource("2_28xx0")
+albedo_texture = ExtResource("3_584ak")
 uv1_scale = Vector3(3, 2, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_gmtno"]
