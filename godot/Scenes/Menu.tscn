@@ -30,6 +30,7 @@ texture = ExtResource("9_ay7p7")
 stretch_mode = 5
 
 [node name="Main" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -99,7 +100,6 @@ texture_normal = ExtResource("4_fk37b")
 texture_hover = ExtResource("5_llh1e")
 
 [node name="Credits" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -107,75 +107,85 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Actual content" type="VBoxContainer" parent="Credits"]
+[node name="Panel" type="Panel" parent="Credits"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = -301.0
+offset_right = 309.0
+offset_bottom = 301.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Actual content" type="VBoxContainer" parent="Credits/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -269.5
+offset_right = 208.0
+offset_bottom = 269.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Titel Container" type="VBoxContainer" parent="Credits/Actual content"]
-layout_mode = 2
-
-[node name="Pretitel" type="Label" parent="Credits/Actual content/Titel Container"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Shoe Packeting "
-horizontal_alignment = 1
-uppercase = true
-
-[node name="Titel" type="Label" parent="Credits/Actual content/Titel Container"]
+[node name="Titel2" type="Label" parent="Credits/Panel/Actual content"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "Credits"
 horizontal_alignment = 1
 
-[node name="Name Container" type="VBoxContainer" parent="Credits/Actual content"]
+[node name="Name Container" type="VBoxContainer" parent="Credits/Panel/Actual content"]
 layout_mode = 2
 
-[node name="Label 1" type="Label" parent="Credits/Actual content/Name Container"]
+[node name="Label 1" type="Label" parent="Credits/Panel/Actual content/Name Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Benjamin Sundvall"
 horizontal_alignment = 1
 
-[node name="Label 2" type="Label" parent="Credits/Actual content/Name Container"]
+[node name="Label 2" type="Label" parent="Credits/Panel/Actual content/Name Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Moa Magnesved"
 horizontal_alignment = 1
 
-[node name="Label 3" type="Label" parent="Credits/Actual content/Name Container"]
+[node name="Label 3" type="Label" parent="Credits/Panel/Actual content/Name Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Viggo Ingmarsson"
 horizontal_alignment = 1
 
-[node name="Label 4" type="Label" parent="Credits/Actual content/Name Container"]
+[node name="Label 4" type="Label" parent="Credits/Panel/Actual content/Name Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Zackarias Wadströmer"
 horizontal_alignment = 1
 
-[node name="Titel" type="Label" parent="Credits/Actual content"]
+[node name="Titel" type="Label" parent="Credits/Panel/Actual content"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Thanks to"
 horizontal_alignment = 1
 
-[node name="Name Container2" type="VBoxContainer" parent="Credits/Actual content"]
+[node name="Name Container2" type="VBoxContainer" parent="Credits/Panel/Actual content"]
 layout_mode = 2
 
-[node name="Label 1" type="Label" parent="Credits/Actual content/Name Container2"]
+[node name="Label 1" type="Label" parent="Credits/Panel/Actual content/Name Container2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Erik Martinsson (drove a car)"
 horizontal_alignment = 1
 
-[node name="Label 2" type="Label" parent="Credits/Actual content/Name Container2"]
+[node name="Label 2" type="Label" parent="Credits/Panel/Actual content/Name Container2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Jonatan Wästlund (was here)"
