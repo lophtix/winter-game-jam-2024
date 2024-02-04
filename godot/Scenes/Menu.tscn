@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dski00ajvpwpw"]
+[gd_scene load_steps=5 format=3 uid="uid://dski00ajvpwpw"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_4s1yw"]
 [ext_resource type="AudioStream" uid="uid://cgmxnglmga5qv" path="res://assets/Audio/button.wav" id="2_qpv36"]
+[ext_resource type="Texture2D" uid="uid://vc6xg45vemi3" path="res://assets/shoe.png" id="3_nc2a8"]
 
 [sub_resource type="FontFile" id="FontFile_br2cr"]
 subpixel_positioning = 0
@@ -32,6 +33,7 @@ grow_vertical = 2
 script = ExtResource("1_4s1yw")
 
 [node name="Main" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -70,7 +72,6 @@ theme_override_font_sizes/font_size = 30
 text = "Credit"
 
 [node name="Credits" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -79,9 +80,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Actual content" type="VBoxContainer" parent="Credits"]
-layout_mode = 2
-offset_right = 1152.0
-offset_bottom = 648.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
@@ -164,6 +166,14 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Return to Shoes"
 
+[node name="Shoe" type="TextureRect" parent="Credits"]
+layout_mode = 0
+offset_left = 1287.0
+offset_top = 363.0
+offset_right = 1501.0
+offset_bottom = 539.0
+texture = ExtResource("3_nc2a8")
+
 [node name="ButtonPressPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_qpv36")
 
@@ -172,3 +182,4 @@ stream = ExtResource("2_qpv36")
 [connection signal="pressed" from="Main/MarginContainer/VBoxContainer/Credit Button" to="." method="show_credits"]
 [connection signal="pressed" from="Main/MarginContainer/VBoxContainer/Credit Button" to="ButtonPressPlayer" method="play"]
 [connection signal="pressed" from="Credits/MarginContainer/Return Button" to="." method="show_main"]
+[connection signal="pressed" from="Credits/MarginContainer/Return Button" to="ButtonPressPlayer" method="play"]

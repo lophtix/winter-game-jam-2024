@@ -14,7 +14,7 @@ config/name="wgj2024"
 config/description="Packet shoes in boxes with baseball bat"
 run/main_scene="res://Scenes/Engine.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://assets/shoe.png"
+config/icon="res://assets/GameIcon.png"
 
 [display]
 
