@@ -8,10 +8,14 @@ enum ShoeType { BLUE, GREEN, ORANGE, RED, YELLOW }
 @onready var sprite : Sprite2D = $Sprite
 @onready var flyingShoePacked : PackedScene = preload("res://Scenes/FlyingShoe.tscn")
 
+@onready var actual_game : ActualGame = $"../../../"
+
 var game: Game
 
 func _process(_delta):
-	if global_position.y > get_viewport_rect().size.y * 1.2:
+	if global_position.y > get_viewport_rect().size.y * 1.05:
+		actual_game.dropped_shoes += 1
+		actual_game.update_score()
 		queue_free()
 
 func whack(bat_strength : float, _bat_vector : Vector2):

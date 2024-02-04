@@ -11,11 +11,11 @@ class_name GameBox
 
 var last_shoe_type = null
 
-func set_type(type: Shoe.ShoeType):
+func set_type(type: Shoe.ShoeType, is_open: bool):
 	box_color = type
 	
 	visual_box.set_shape(box_color)
-	visual_box.set_box_open(false)
+	visual_box.set_box_open(is_open)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,7 +23,7 @@ func _ready() -> void:
 	if maybe_game3d is Game3D:
 		game3d = maybe_game3d 
 	
-	set_type(box_color)
+	set_type(box_color, true)
 
 func handle_new_shoe(shoe_type: Shoe.ShoeType):
 	if game3d:
