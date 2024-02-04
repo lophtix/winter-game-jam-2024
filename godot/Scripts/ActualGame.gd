@@ -6,10 +6,18 @@ class_name ActualGame
 
 var total_score: int = 0
 
+var dropped_shoes : int = 0
+var packed_shoes : int = 0
+var paired_shoes : int = 0
+var perfect_shoes : int = 0
+
 func _ready():
 	ui.set_score(0)
 	
-func add_score(score: int):
-	total_score += score
+func update_score():
+	total_score = (-10  * dropped_shoes + 
+					20  * packed_shoes  + 
+					40  * paired_shoes  + 
+					100 * perfect_shoes)
 	ui.set_score(total_score)
 
