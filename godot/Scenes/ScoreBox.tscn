@@ -1,14 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://blser1mvss4el"]
 
-[ext_resource type="PackedScene" uid="uid://cg75ghx351xjb" path="res://Scenes/GameBox.tscn" id="1_ryhuk"]
+[ext_resource type="PackedScene" uid="uid://c1jw6lf363128" path="res://Scenes/VisualBox.tscn" id="1_uhe2v"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_jo7mn"]
-size = Vector3(3.12894, 1.42853, 2.11725)
+[sub_resource type="BoxShape3D" id="BoxShape3D_ualyf"]
+size = Vector3(3.14227, 1.42389, 2.11298)
 
 [node name="SceneBox" type="RigidBody3D"]
+linear_damp = 5.0
 
-[node name="GameBox" parent="." instance=ExtResource("1_ryhuk")]
+[node name="VisualBox" parent="." instance=ExtResource("1_uhe2v")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0161903, 0.0947849, -0.0164948)
-shape = SubResource("BoxShape3D_jo7mn")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00784302, 0.092865, -0.00387573)
+shape = SubResource("BoxShape3D_ualyf")

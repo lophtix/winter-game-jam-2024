@@ -24,7 +24,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 own_world_3d = true
 handle_input_locally = false
-size = Vector2i(1152, 648)
+size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="ConveyerBelt" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_ydpdq")]
@@ -36,3 +36,88 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Ui"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.1
+anchor_right = 0.75
+anchor_bottom = 0.4
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Ui/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.5
+theme_override_font_sizes/font_size = 60
+text = "Good Job!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Ui/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Dropped" type="MarginContainer" parent="Ui/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Ui/Panel/HBoxContainer/Dropped"]
+layout_mode = 2
+alignment = 1
+
+[node name="What" type="Label" parent="Ui/Panel/HBoxContainer/Dropped/VBoxContainer"]
+layout_mode = 2
+text = "Dropped shoes"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Points" type="Label" parent="Ui/Panel/HBoxContainer/Dropped/VBoxContainer"]
+layout_mode = 2
+text = "20 points"
+horizontal_alignment = 1
+
+[node name="Perfect" type="MarginContainer" parent="Ui/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="What" type="Label" parent="Ui/Panel/HBoxContainer/Perfect"]
+layout_mode = 2
+text = "Perfect Pairs
+20 points"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pair" type="MarginContainer" parent="Ui/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="What" type="Label" parent="Ui/Panel/HBoxContainer/Pair"]
+layout_mode = 2
+text = "Pairs
+20 points"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Single" type="MarginContainer" parent="Ui/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="What" type="Label" parent="Ui/Panel/HBoxContainer/Single"]
+layout_mode = 2
+text = "Singles
+20 points"
+horizontal_alignment = 1
+vertical_alignment = 1

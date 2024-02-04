@@ -1,9 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://csj1evunkwdyt"]
+[gd_scene load_steps=7 format=3 uid="uid://csj1evunkwdyt"]
 
 [ext_resource type="Script" path="res://Scripts/ConveyerBelt.gd" id="1_rs2wt"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cb1a0"]
-friction = 0.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_py5bo"]
 size = Vector2(10, 10)
@@ -17,23 +14,19 @@ material = SubResource("StandardMaterial3D_uhken")
 size = Vector2(10, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u745t"]
-size = Vector3(20.1783, 6.10014, 2.04224)
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l1nk4"]
-friction = 0.0
+size = Vector3(14.1926, 6.10014, 2.04224)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rt5r4"]
-size = Vector3(19.6824, 1, 1.52454)
+size = Vector3(13.937, 1, 1.52454)
 
 [node name="ConveyerBelt" type="StaticBody3D"]
-physics_material_override = SubResource("PhysicsMaterial_cb1a0")
 script = ExtResource("1_rs2wt")
-spawnStart = Vector3(-4, 2, 0)
-spawnEnd = Vector3(-2, 2, 0)
-spawnHeight = 0.3
+spawnStart = Vector3(4, 2, 0)
+spawnEnd = Vector3(-4, 2, 0)
+spawnHeight = null
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.985241, 0.171173, 0, -0.171173, 0.985241, 0, 2.54656, 5.25698)
+transform = Transform3D(1, 0, 0, 0, 0.985241, 0.171173, 0, -0.171173, 0.985241, 0, 1.29423, 5.38818)
 
 [node name="Background" type="Node3D" parent="."]
 
@@ -55,17 +48,14 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 0.381522, 0.92436, 0, -0.92436, 0.381522, 0, 3.69838, 1.84772)
 
 [node name="Collider Bottom" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194927, -2.59535, 1.67191)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.696121, -2.59535, 1.67191)
 shape = SubResource("BoxShape3D_u745t")
 
-[node name="Walls" type="StaticBody3D" parent="."]
-physics_material_override = SubResource("PhysicsMaterial_l1nk4")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Walls"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.39224, 1.21899, -0.378429)
 shape = SubResource("BoxShape3D_u745t")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Walls"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.78448, 2.41828, 2.58277)
 shape = SubResource("BoxShape3D_u745t")
 
@@ -73,7 +63,7 @@ shape = SubResource("BoxShape3D_u745t")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.943123)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Conveyor Proximity"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.467163, 0.894758, 0.262268)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.18335, 0.894758, 0.262268)
 shape = SubResource("BoxShape3D_rt5r4")
 
 [connection signal="area_entered" from="Conveyor Proximity" to="." method="_on_conveyor_proximity_area_entered"]

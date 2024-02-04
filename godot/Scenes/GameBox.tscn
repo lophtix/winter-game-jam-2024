@@ -1,48 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cg75ghx351xjb"]
+[gd_scene load_steps=3 format=3 uid="uid://cg75ghx351xjb"]
 
 [ext_resource type="Script" path="res://Scripts/GameBox.gd" id="1_4gcq6"]
-[ext_resource type="Texture2D" uid="uid://w0mrgcaavmyj" path="res://assets/orange/OrangeTop1.png" id="3_alfjy"]
-[ext_resource type="Texture2D" uid="uid://dkgcewsn3ip28" path="res://assets/orange/OrangeBox1.png" id="3_r3lys"]
+[ext_resource type="PackedScene" uid="uid://c1jw6lf363128" path="res://Scenes/VisualBox.tscn" id="2_e1jjc"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_wi4y7"]
-size = Vector3(3, 1.25, 2)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8fn51"]
-albedo_texture = ExtResource("3_r3lys")
-uv1_scale = Vector3(3, 2, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_rc7o2"]
-lightmap_size_hint = Vector2i(28, 33)
-material = SubResource("StandardMaterial3D_8fn51")
-size = Vector3(3, 1.25, 2)
-subdivide_depth = 10
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_7pbsy"]
-size = Vector3(3.1, 0.5, 2.1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6wu7n"]
-albedo_texture = ExtResource("3_alfjy")
-uv1_scale = Vector3(3, 2, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_y7pbn"]
-material = SubResource("StandardMaterial3D_6wu7n")
-size = Vector3(3.1, 0.5, 2.1)
-
-[node name="GameBox" type="Area3D"]
+[node name="GameBox" type="Node3D"]
 script = ExtResource("1_4gcq6")
 
-[node name="BoxCollisionShape" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_wi4y7")
+[node name="VisualBox" parent="." instance=ExtResource("2_e1jjc")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="BoxCollisionShape"]
-mesh = SubResource("BoxMesh_rc7o2")
-skeleton = NodePath("../..")
-
-[node name="LidCollisionShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
-shape = SubResource("BoxShape3D_7pbsy")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="LidCollisionShape"]
-mesh = SubResource("BoxMesh_y7pbn")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="VisualBox" to="." method="_on_body_entered"]
