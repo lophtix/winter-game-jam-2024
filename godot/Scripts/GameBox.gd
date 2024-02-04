@@ -10,9 +10,11 @@ class_name GameBox
 @onready var game3d: Game3D
 
 var last_shoe_type = null
+var open = false
 
 func set_type(type: Shoe.ShoeType, is_open: bool):
 	box_color = type
+	open = is_open
 
 	visual_box.set_shape(box_color)
 	visual_box.set_box_open(is_open)
@@ -35,10 +37,12 @@ func handle_new_shoe(shoe_type: Shoe.ShoeType):
 			game3d.game.perfect_shoes += 1
 		else:
 			visual_box.set_box_open(false)
+			open = false
 
-		if last_shoe_type == null && last_shoe_type == shoe_type:
+		if last_shoe_type == shoe_type and open:
 			game3d.game.paired_shoes += 1
 			visual_box.set_box_open(false)
+			open = false
 
 		game3d.game.update_score()
 
