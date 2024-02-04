@@ -37,11 +37,13 @@ func handle_new_shoe(shoe_type: Shoe.ShoeType):
 			game3d.game.perfect_shoes += 1
 		else:
 			visual_box.set_box_open(false)
+			$ThompPlayer.play()
 			open = false
 
 		if last_shoe_type == shoe_type and open:
 			game3d.game.paired_shoes += 1
 			visual_box.set_box_open(false)
+			$ThompPlayer.play()
 			open = false
 
 		game3d.game.update_score()
