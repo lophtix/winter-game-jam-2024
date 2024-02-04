@@ -36,7 +36,7 @@ func add_boxes(boxes_to_add : Array[VisualBox]):
 		boxes.append(score_box)
 		
 		for child in score_box.get_children():
-			child.scale *= 0.25
+			child.scale *= 0.20
 		
 		score_box.position = lerp(spawnStart, spawnEnd, randf())
 		score_box.position.y += spawnHeightStep
