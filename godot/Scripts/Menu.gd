@@ -12,10 +12,6 @@ class_name MainMenu
 func _ready():
 	show_main()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func start_game():
 	engine.start_game()
 

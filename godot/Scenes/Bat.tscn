@@ -6,8 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://dipkrub263x6f" path="res://assets/Audio/woosh.wav" id="3_b3idn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qb77v"]
-radius = 40.0
-height = 255.0
+radius = 64.9982
+height = 351.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3q7sd"]
 radius = 37.5
@@ -30,7 +30,7 @@ texture = ExtResource("1_4eyhf")
 position = Vector2(0.0010633, -205.5)
 
 [node name="WhackCollider" type="CollisionShape2D" parent="WhackArea"]
-position = Vector2(-0.000380099, -105)
+position = Vector2(-0.00214025, -92)
 shape = SubResource("CapsuleShape2D_qb77v")
 
 [node name="BatCollider1" type="CollisionPolygon2D" parent="."]

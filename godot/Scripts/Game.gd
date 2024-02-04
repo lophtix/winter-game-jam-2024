@@ -41,7 +41,7 @@ func handle_timeout():
 
 func _process(delta):
 	if timer != null:
-		ui.set_timer(timer.time_left)
+		ui.set_timer(int(timer.time_left))
 		
 	if spawn:
 		spawnTimer -= delta

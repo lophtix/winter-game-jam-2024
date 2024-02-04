@@ -12,7 +12,8 @@ func set_score(score: int):
 	score_text.text = score_format % score
 
 func set_timer(timer: int):
-	var minutes = floor(timer / 60)
-	var seconds = timer % 60
+	@warning_ignore("integer_division")
+	var minutes: int = timer / 60
+	var seconds: int = timer % 60
 	timer_text.text = timer_format % [minutes, seconds]
 	pass

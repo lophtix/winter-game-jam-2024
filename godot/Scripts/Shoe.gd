@@ -14,7 +14,7 @@ func _process(_delta):
 	if global_position.y > get_viewport_rect().size.y * 1.2:
 		queue_free()
 
-func whack(bat_strength : float, bat_vector : Vector2):
+func whack(bat_strength : float, _bat_vector : Vector2):
 	# Spawn 3D shoe and hand it to 3D engine to use
 	var flying_shoe : FlyingShoe = flyingShoePacked.instantiate()
 	

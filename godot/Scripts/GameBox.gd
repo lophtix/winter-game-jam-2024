@@ -32,9 +32,9 @@ func get_box_color_path():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var game3d = get_node_or_null("../")
-	if game3d is Game3D:
-		self.game3d = game3d 
+	var maybe_game3d = get_node_or_null("../")
+	if maybe_game3d is Game3D:
+		game3d = maybe_game3d 
 	
 	# TODO: Ugly, fix later...
 	var box_size = Vector3(3, 1.25, 2)
