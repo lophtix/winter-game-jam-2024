@@ -14,34 +14,34 @@ shadow_enabled = true
 [node name="Boxes" type="Node3D" parent="."]
 
 [node name="Box" parent="Boxes" instance=ExtResource("1_v4omr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73488, 1.34842, -1.33138)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73488, 0.740578, -1.33138)
 box_color = 0
 
 [node name="Box2" parent="Boxes" instance=ExtResource("1_v4omr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52058, 1.35693, -1.33138)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52058, 0.749088, -1.33138)
 box_color = 3
 
 [node name="Box5" parent="Boxes" instance=ExtResource("1_v4omr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.74395, 1.34842, -1.33138)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.74395, 0.740578, -1.33138)
 
 [node name="Box6" parent="Boxes" instance=ExtResource("1_v4omr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.03601, 1.35693, -1.33138)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.03601, 0.749088, -1.33138)
 box_color = 1
 
 [node name="Box3" parent="Boxes" instance=ExtResource("1_v4omr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73045, 3.72317, -1.33138)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73045, 3.11533, -1.33138)
 box_color = 0
 
 [node name="Box4" parent="Boxes" instance=ExtResource("1_v4omr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.59158, 3.75339, -1.33138)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.59158, 3.14555, -1.33138)
 box_color = 1
 
 [node name="Box7" parent="Boxes" instance=ExtResource("1_v4omr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.95571, 3.72317, -1.33138)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.95571, 3.11533, -1.33138)
 box_color = 4
 
 [node name="Box8" parent="Boxes" instance=ExtResource("1_v4omr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1205, 3.75339, -1.33138)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1205, 3.14555, -1.33138)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 70)

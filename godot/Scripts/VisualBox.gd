@@ -2,15 +2,6 @@ extends Area3D
 
 class_name VisualBox
 
-@export var box_width = 3
-@export var box_height = 1.25
-@export var box_depth = 2
-
-@export var lid_width = 3.1
-@export var lid_height = 0.5
-@export var lid_depth = 2.1
-
-
 func get_box_color_path(box_color : Shoe.ShoeType):
 	match box_color:
 		Shoe.ShoeType.ORANGE:
@@ -29,19 +20,30 @@ func get_box_color_path(box_color : Shoe.ShoeType):
 
 # Called when the node enters the scene tree for the first time.
 func set_shape(box_color : Shoe.ShoeType):
-	# TODO: Ugly, fix later...
 	var box_size = Vector3(3, 1.25, 2)
 	var lid_size = Vector3(3.1, 0.5, 2.1)
-
+	
+	var box_variation = randi() % 3 + 1
+	
+	match box_variation:
+		1:
+			box_size = Vector3(3, 1.25, 2)
+		2:
+			box_size = Vector3(3, 2, 2)
+		3:
+			box_size = Vector3(2.75, 2, 2)
+	
+	
 	# Set box collision shape
 	var box_shape = BoxShape3D.new()
 	box_shape.set_size(box_size)
 	$BoxCollisionShape.shape = box_shape
+	$BoxCollisionShape.position.y = box_size.y / 2
 
 	# Set box mesh
 	var box_mesh = BoxMesh.new()
 	var box_material = StandardMaterial3D.new()
-	var box_texture = load(get_box_color_path(box_color) + "Box1.png")
+	var box_texture = load(get_box_color_path(box_color) + "Box" + str(box_variation) + ".png")
 	box_material.albedo_texture = box_texture
 	box_material.uv1_scale = Vector3(3, 2, 1)
 	box_mesh.material = box_material
@@ -52,11 +54,13 @@ func set_shape(box_color : Shoe.ShoeType):
 	var lid_shape = BoxShape3D.new()
 	lid_shape.set_size(box_size)
 	$LidCollisionShape.shape = lid_shape
+	var lid_y_offset = box_size.y / 2
+	$LidCollisionShape.position.y = box_size.y
 
 	# Set lid mesh
 	var lid_mesh = BoxMesh.new()
 	var lid_material = StandardMaterial3D.new()
-	var lid_texture = load(get_box_color_path(box_color) + "Top1.png")
+	var lid_texture = load(get_box_color_path(box_color) + "Top" + str(box_variation) + ".png")
 	lid_material.albedo_texture = lid_texture
 	lid_material.uv1_scale = Vector3(3, 2, 1)
 	lid_mesh.material = lid_material
