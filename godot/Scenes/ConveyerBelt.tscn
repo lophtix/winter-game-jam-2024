@@ -28,12 +28,12 @@ size = Vector3(19.6824, 1, 1.52454)
 [node name="ConveyerBelt" type="StaticBody3D"]
 physics_material_override = SubResource("PhysicsMaterial_cb1a0")
 script = ExtResource("1_rs2wt")
-spawnStart = Vector3(-4, 2, 0)
-spawnEnd = Vector3(-2, 2, 0)
+spawnStart = Vector3(-5, 2, 0)
+spawnEnd = Vector3(-3, 2, 0)
 spawnHeight = 0.3
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.985241, 0.171173, 0, -0.171173, 0.985241, 0, 2.54656, 5.25698)
+transform = Transform3D(1, 0, 0, 0, 0.985241, 0.171173, 0, -0.171173, 0.985241, -4.76837e-07, 1.2313, 2.30349)
 
 [node name="Background" type="Node3D" parent="."]
 

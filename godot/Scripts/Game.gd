@@ -53,7 +53,8 @@ func _process(delta):
 			timer.start()
 
 func end_game():
-	engine.end_game()
+	engine.end_game_and_go_to_scores()
+	#engine.end_game()
 
 func _on_time_up():
 	if spawn:

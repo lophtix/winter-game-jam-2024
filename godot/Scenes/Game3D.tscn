@@ -11,34 +11,36 @@ script = ExtResource("1_k08ne")
 transform = Transform3D(0.99998, 0.00553539, -0.00319583, -1.49013e-08, 0.499998, 0.866027, 0.0063917, -0.866009, 0.499988, 0, 4.83429, 3.02182)
 shadow_enabled = true
 
-[node name="Box" parent="." instance=ExtResource("1_v4omr")]
+[node name="Boxes" type="Node3D" parent="."]
+
+[node name="Box" parent="Boxes" instance=ExtResource("1_v4omr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73488, 1.34842, -1.33138)
 box_color = 0
 
-[node name="Box2" parent="." instance=ExtResource("1_v4omr")]
+[node name="Box2" parent="Boxes" instance=ExtResource("1_v4omr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52058, 1.35693, -1.33138)
 box_color = 3
 
-[node name="Box5" parent="." instance=ExtResource("1_v4omr")]
+[node name="Box5" parent="Boxes" instance=ExtResource("1_v4omr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.74395, 1.34842, -1.33138)
 
-[node name="Box6" parent="." instance=ExtResource("1_v4omr")]
+[node name="Box6" parent="Boxes" instance=ExtResource("1_v4omr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.03601, 1.35693, -1.33138)
 box_color = 1
 
-[node name="Box3" parent="." instance=ExtResource("1_v4omr")]
+[node name="Box3" parent="Boxes" instance=ExtResource("1_v4omr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73045, 3.72317, -1.33138)
 box_color = 0
 
-[node name="Box4" parent="." instance=ExtResource("1_v4omr")]
+[node name="Box4" parent="Boxes" instance=ExtResource("1_v4omr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.59158, 3.75339, -1.33138)
 box_color = 1
 
-[node name="Box7" parent="." instance=ExtResource("1_v4omr")]
+[node name="Box7" parent="Boxes" instance=ExtResource("1_v4omr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.95571, 3.72317, -1.33138)
 box_color = 4
 
-[node name="Box8" parent="." instance=ExtResource("1_v4omr")]
+[node name="Box8" parent="Boxes" instance=ExtResource("1_v4omr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1205, 3.75339, -1.33138)
 
 [node name="Camera3D" type="Camera3D" parent="."]
