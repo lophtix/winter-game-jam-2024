@@ -2,13 +2,8 @@ extends Control
 
 class_name ScoreScreen
 
-func _ready():
-	pass # Replace with function body.
-
-
-func _process(delta):
-	pass
-
+func fill_with_boxes(game : ActualGame):
+	$SubViewportContainer/SubViewport/ConveyerBelt.add_boxes_from_game(game)
 
 func update_with_points(game : ActualGame):
 	$Ui/Panel/MarginContainer/HBoxContainer2/Points.text = "%s points" % game.total_score

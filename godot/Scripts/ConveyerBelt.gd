@@ -1,10 +1,11 @@
 extends Node3D
 
-@onready var score_box_packed : PackedScene = load("res://Scenes/ScoreBox.tscn")  
+class_name ConveyorBelt
+
+var score_box_packed : PackedScene = preload("res://Scenes/ScoreBox.tscn")  
 
 @onready var conveyor_proximity : Area3D = $"Conveyor Proximity"
 
-var boxes_types : Array[Shoe.ShoeType]
 var boxes : Array[RigidBody3D]
 
 @export var spawnStart : Vector3
@@ -13,23 +14,13 @@ var boxes : Array[RigidBody3D]
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	if not boxes_types:
-		boxes_types = [
-			randi() % Shoe.ShoeType.size(),
-			randi() % Shoe.ShoeType.size(),
-			randi() % Shoe.ShoeType.size(),
-			randi() % Shoe.ShoeType.size(),
-			randi() % Shoe.ShoeType.size()
-		]
-	
-	boxes = []
+func add_boxes(boxes_to_add : Array[VisualBox]):
 	var spawnHeightStep = 0
-	for box in boxes_types:
+	for box in boxes_to_add:
 		var score_box : Node3D = score_box_packed.instantiate()
 		var visual_box : VisualBox = score_box.find_child("VisualBox")
 		
-		visual_box.set_shape(box)
+		visual_box.replace_by(box)
 		
 		boxes.append(score_box)
 		
@@ -41,8 +32,18 @@ func _ready():
 		spawnHeightStep += spawnHeight
 		
 		add_child(score_box)
-		
-		#score_box.add_constant_force(Vector3(3,0,0))
+
+
+func add_boxes_from_game(game : ActualGame):
+	var game_boxes = game.game3d.get_boxes()
+	
+	var visual_boxes : Array[VisualBox] = []
+	
+	for game_box in game_boxes:
+		visual_boxes.append(game_box.visual_box)
+	
+	add_boxes(visual_boxes)
+
 
 func _on_conveyor_proximity_area_entered(area):
 	update_conveyor_belt()

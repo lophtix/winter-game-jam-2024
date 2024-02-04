@@ -4,6 +4,8 @@ class_name ActualGame
 
 @onready var ui : UI = $UI
 
+@onready var game3d : Game3D = get_node("SubViewportContainer/SubViewport/Game3D")
+
 var total_score: int = 0
 
 const dropped_shoes_points : int = -1
