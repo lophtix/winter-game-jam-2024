@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://csj1evunkwdyt"]
+[gd_scene load_steps=10 format=3 uid="uid://csj1evunkwdyt"]
 
 [ext_resource type="Script" path="res://Scripts/ConveyerBelt.gd" id="1_rs2wt"]
+[ext_resource type="Texture2D" uid="uid://blufy02hsrglc" path="res://assets/Wheel.png" id="2_jxjfx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cb1a0"]
 friction = 0.0
@@ -17,7 +18,7 @@ material = SubResource("StandardMaterial3D_uhken")
 size = Vector2(10, 0.8)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u745t"]
-size = Vector3(20.1783, 6.10014, 2.04224)
+size = Vector3(20.1783, 16.5198, 2.04224)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l1nk4"]
 friction = 0.0
@@ -28,12 +29,12 @@ size = Vector3(19.6824, 1, 1.52454)
 [node name="ConveyerBelt" type="StaticBody3D"]
 physics_material_override = SubResource("PhysicsMaterial_cb1a0")
 script = ExtResource("1_rs2wt")
-spawnStart = Vector3(-5, 2, 0)
-spawnEnd = Vector3(-3, 2, 0)
+spawnStart = Vector3(-5, 2, 0.887)
+spawnEnd = Vector3(-3, 2, 0.887)
 spawnHeight = 0.3
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.985241, 0.171173, 0, -0.171173, 0.985241, -4.76837e-07, 1.93897, 5.4538)
+transform = Transform3D(1, 0, 0, 0, 0.985241, 0.171173, 0, -0.171173, 0.985241, -4.76837e-07, 1.54393, 2.72968)
 
 [node name="Background" type="Node3D" parent="."]
 
@@ -51,19 +52,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39, 0.887)
 mesh = SubResource("PlaneMesh_6onos")
 skeleton = NodePath("../..")
 
+[node name="Conveyor Belt2" type="MeshInstance3D" parent="Background"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.0421402, 1.21133)
+mesh = SubResource("PlaneMesh_6onos")
+
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.381522, 0.92436, 0, -0.92436, 0.381522, 0, 3.69838, 1.84772)
 light_energy = 3.151
 
 [node name="Collider Bottom" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194927, -2.59535, 1.67191)
+transform = Transform3D(1, 0, -4.37114e-08, -4.37114e-08, 1.91069e-15, -1, 0, 1, 1.91069e-15, 0.194927, -0.659323, 1.67191)
 shape = SubResource("BoxShape3D_u745t")
 
 [node name="Walls" type="StaticBody3D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_l1nk4")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.39224, 1.21899, -0.378429)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.815, 5.65808, 0.156122)
 shape = SubResource("BoxShape3D_u745t")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Walls"]
@@ -76,6 +81,188 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.943123)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Conveyor Proximity"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.467163, 0.894758, 0.262268)
 shape = SubResource("BoxShape3D_rt5r4")
+
+[node name="Wheels" type="Node3D" parent="."]
+
+[node name="Wheel" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 0, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel2" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 0.494568, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel3" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 0.249639, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel4" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -0.747501, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel5" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -0.252933, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel6" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -0.497862, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel7" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 0.745103, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel8" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 1.23967, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel9" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 0.994742, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel10" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 1.49062, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel11" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 1.98519, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel12" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 1.74026, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel13" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -1.51138, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel14" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -1.01681, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel15" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -1.26174, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel16" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -3.73368, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel17" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -3.23912, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel18" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -3.48404, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel19" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -4.48118, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel20" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -3.98662, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel21" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -4.23155, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel22" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -2.98858, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel23" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -2.49401, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel24" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -2.73894, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel25" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -2.24306, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel26" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -1.74849, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel27" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -1.99342, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel28" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -5.24506, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel29" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -4.75049, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel30" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -4.99542, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel31" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 3.74126, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel32" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 4.23582, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel33" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 3.99089, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel34" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 2.99375, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel35" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 3.48832, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel36" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 3.24339, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel37" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 4.48636, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel38" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 4.98093, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel39" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 4.736, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel40" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 5.23188, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel41" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 5.72645, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel42" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 5.48152, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel43" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 2.22988, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel44" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 2.72445, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
+
+[node name="Wheel45" type="Sprite3D" parent="Wheels"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 2.47952, 0.279912, 1.26577)
+texture = ExtResource("2_jxjfx")
 
 [connection signal="area_entered" from="Conveyor Proximity" to="." method="_on_conveyor_proximity_area_entered"]
 [connection signal="area_exited" from="Conveyor Proximity" to="." method="_on_conveyor_proximity_area_exited"]
